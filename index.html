@@ -6,60 +6,193 @@
     <meta name="description" content="Yuyang Dong - Principal Researcher at NEC Generative AI Center">
     <title>Yuyang Dong - Personal Homepage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --light-bg: #f8f9fa;
+        }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: var(--primary-color);
+            position: relative;
+            scroll-padding-top: 80px;
         }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            color: var(--primary-color) !important;
+        }
+
+        .nav-link {
+            color: var(--secondary-color) !important;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-color) !important;
+        }
+
+        section {
+            padding: 80px 0;
+            min-height: 100vh;
+        }
+
         .profile-section {
-            padding: 2rem 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
         }
+
         .profile-image {
             max-width: 304px;
             height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
-        h1, h2, h3 {
-            color: #2c3e50;
+
+        .profile-image:hover {
+            transform: translateY(-5px);
+        }
+
+        .social-links {
             margin-top: 1.5rem;
         }
+
+        .social-links a {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .section-title {
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
         .publication-year {
-            background-color: #f8f9fa;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            margin-top: 2rem;
+            background-color: var(--light-bg);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            margin-top: 2.5rem;
+            font-weight: 600;
         }
+
         .publication-item {
-            margin-bottom: 1.5rem;
-            padding-left: 1rem;
-        }
-        .publication-item b {
-            color: #2c3e50;
-        }
-        li {
-            margin-bottom: 0.7rem;
-        }
-        .news-section {
-            background-color: #f8f9fa;
+            background: white;
+            margin: 1rem 0;
             padding: 1.5rem;
             border-radius: 8px;
-            margin: 2rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
         }
-        hr {
-            margin: 2rem 0;
-            opacity: 0.2;
+
+        .publication-item:hover {
+            transform: translateX(5px);
+        }
+
+        .award-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .award-item:hover {
+            transform: translateX(5px);
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 40px 0;
+            }
+            .profile-image {
+                margin-bottom: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="profile-section">
-            <h1 class="mb-4">Yuyang Dong</h1>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <img src="photo.jpg" alt="Me and Wife" class="profile-image img-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Yuyang Dong</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#profile">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#news">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#publications">Publications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#awards">Awards</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="profile" class="profile-section">
+        <div class="container">
+            <h2 class="section-title">Profile</h2>
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center">
+                    <img src="photo.jpg" alt="Me and Wife" class="profile-image img-fluid mb-4">
+                    <div class="social-links">
+                        <a href="https://x.com/touuyou001" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/yuyang-dong-6757a5119/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Dongyuyang" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
                 </div>
                 <div class="col-md-8">
                     <p>
@@ -69,225 +202,256 @@
                         <br> E-mail: dongyuyang@nec.com
                     </p>
 
-                    <h2>Profile</h2>
-                    <ul>
-                        <li>Yuyang Dong, Man.</li>
-                        <li>Born in Beijing, China. 1991</li>
-                        <li>Received the B.S. degree from <a href="http://www.cumtb.edu.cn/">China University of Mining & Technology, Beijing</a>, 2013.</li>
-                        <li>Received the M.S. and Ph.D. degree from <a href="https://www.tsukuba.ac.jp/">University of Tsukuba</a>, Japan, 2014-2019.</li>
-                        <li>Now, a principal researcher in NEC Generative AI Center and Data Science Research Lab, Japan.</li>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">🎓 Yuyang Dong, Man.</li>
+                        <li class="mb-3">📍 Born in Beijing, China. 1991</li>
+                        <li class="mb-3">🎓 B.S. degree from <a href="http://www.cumtb.edu.cn/">China University of Mining & Technology, Beijing</a>, 2013.</li>
+                        <li class="mb-3">🎓 M.S. and Ph.D. degree from <a href="https://www.tsukuba.ac.jp/">University of Tsukuba</a>, Japan, 2014-2019.</li>
+                        <li class="mb-3">💼 Now, a principal researcher in NEC Generative AI Center and Data Science Research Lab, Japan.</li>
                     </ul>
 
-                    <h2>Research Field</h2>
-                    <ul>
-                        <li>Spatial index and vector search (PhD)</li>
-                        <li>LLM/ML/NLP for DB, DB for LLM/ML/NLP</li>
-                        <li>LLM/VLM for tabular data</li>
+                    <h3 class="mt-4">Research Field</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">📊 Spatial index and vector search (PhD)</li>
+                        <li class="mb-3">🤖 LLM/ML/NLP for DB/tabular data, DB for LLM/ML/NLP</li>
+                        <li class="mb-3">📈 Multimodal RAG, Reasoning, LLM VLM</li>
                     </ul>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="news-section">
-            <h2>News!!!</h2>
-            <ul>
-                <li>We released <a href="https://huggingface.co/NECOUDBFM">Jellyfish-7B, 8B, 13B</a> on huggingface -- our large language model designed for data preprocessing. With small parameters, Jellyfish allows for cost-effective local execution without compromising data security and delivers performance on a par with GPT-4 on many data preprocessing tasks such as entity matching, data imputation, and error detection.</li>
-            </ul>
+    <section id="news" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">News</h2>
+            <div class="news-card">
+                <h4>Latest Updates</h4>
+                <ul class="list-unstyled">
+                    <li class="mb-4">
+                        🎉 We released <a href="https://huggingface.co/NECOUDBFM">Jellyfish-7B, 8B, 13B</a> on huggingface -- our large language model designed for data preprocessing. With small parameters, Jellyfish allows for cost-effective local execution without compromising data security and delivers performance on a par with GPT-4 on many data preprocessing tasks such as entity matching, data imputation, and error detection.
+                    </li>
+                </ul>
+            </div>
         </div>
+    </section>
 
-        <section class="publications">
-            <h2>Publications</h2>
+    <section id="publications">
+        <div class="container">
+            <h2 class="section-title">Publications</h2>
             <p>You can also see <a href="https://dblp.uni-trier.de/pers/hd/d/Dong:Yuyang">DBLP</a>.</p>
 
-            <h3 class="publication-year">2024</h3>
-            <div class="publication-list">
-                <div class="publication-item">
-                    <b>Jellyfish: A Large Language Model for Data Preprocessing</b>
-                    <a href="https://arxiv.org/pdf/2312.01678">[Paper]</a>
-                    <a href="https://huggingface.co/NECOUDBFM">[HF model]</a><br>
-                    Haochen Zhang, <u>Yuyang Dong</u>, Chuan Xiao, Masafumi Oyamada<br>
-                    The 2024 Conference on Empirical Methods in Natural Language Processing
-                    (<b>EMNLP 2024 Main Long</b>)
-                </div>
-
-                <div class="publication-item">
-                    <b>On the Use of Large Language Models for Table Tasks (Tutorial)</b>
-                    <a href="https://dongyuyang.github.io/tableLLM-tutorial/">[Github page]</a><br>
-                    <u>Yuyang Dong</u>, Masafumi Oyamada, Chuan Xiao, Haochen Zhang<br>
-                    33rd ACM International Conference on Information and Knowledge Management
-                    (<b>CIKM 2024</b>)
-                </div>
-
-                <div class="publication-item">
-                    <b>Large Language Models as Data Preprocessors</b>
-                    <a href="https://arxiv.org/pdf/2308.16361">[Paper]</a><br>
-                    Haochen Zhang, <u>Yuyang Dong</u>, Chuan Xiao, Masafumi Oyamada<br>
-                    2nd International Workshop on Tabular Data Analysis, International Conference on Very Large Data Bases.
-                    (<b>TaDA workshop@VLDB 2024</b>)
-                </div>
+            <div class="publication-year">2024</div>
+            <div class="publication-item">
+                <b>Jellyfish: A Large Language Model for Data Preprocessing</b>
+                <a href="https://arxiv.org/pdf/2312.01678">[Paper]</a>
+                <a href="https://huggingface.co/NECOUDBFM">[HF model]</a><br>
+                Haochen Zhang, <u>Yuyang Dong</u>, Chuan Xiao, Masafumi Oyamada<br>
+                The 2024 Conference on Empirical Methods in Natural Language Processing
+                (<b>EMNLP 2024 Main Long</b>)
             </div>
 
-            <h3 class="publication-year">2023</h3>
-            <div class="publication-list">
-                <div class="publication-item">
-                    <b>QA-Matcher: Unsupervised Entity Matching Using A Question Answering Model</b>
-                    <a href="./papers/QA-matcher_pakdd23.pdf">[Slide]</a><br>
-                    Shogo Hayashi, <u>Yuyang Dong</u>, Masafumi Oyamada<br>
-                    Pacific-Asia Conference on Knowledge Discovery and Data Mining
-                    (<b>PAKDD 2023</b>)
-                </div>
-
-                <div class="publication-item">
-                    <b>DeepJoin: Joinable Table Discovery with Pre-trained Language Models</b>
-                    <a href="./papers/deep-join-vldb23.pdf">[Slide]</a><br>
-                    <u>Yuyang Dong</u>, Chuan Xiao, Takuma Nozawa, Masafumi Enomoto, Masafumi Oyamada<br>
-                    International Conference on Very Large Data Bases.
-                    (<b>VLDB 2023</b>)
-                </div>
-
-                <div class="publication-item">
-                    <b>CAGAIN: Column Attention Generative Adversarial Imputation Networks</b><br>
-                    Jun Kawagoshi, <u>Yuyang Dong</u>, Takuma Nozawa, Chuan Xiao<br>
-                    International Conference on Database and Expert Systems Applications (<b>DEXA 2023</b>)
-                </div>
+            <div class="publication-item">
+                <b>On the Use of Large Language Models for Table Tasks (Tutorial)</b>
+                <a href="https://dongyuyang.github.io/tableLLM-tutorial/">[Github page]</a><br>
+                <u>Yuyang Dong</u>, Masafumi Oyamada, Chuan Xiao, Haochen Zhang<br>
+                33rd ACM International Conference on Information and Knowledge Management
+                (<b>CIKM 2024</b>)
             </div>
 
-            <h3 class="publication-year">2022</h3>
-            <div class="publication-list">
-                <div class="publication-item">
-                    <b>Table Enrichment System for Machine Learning</b>
-                    <a href="https://arxiv.org/pdf/2204.08235.pdf">[Paper]</a>
-                    <a href="https://www.youtube.com/watch?v=HXikNjblUwU&feature=youtu.be">[Demo Youtube]</a><br>
-                    <u>Yuyang Dong</u>, Masafumi Oyamada<br>
-                    Demo paper, International ACM SIGIR Conference on Research and Development in Information Retrieval (<b>SIGIR 2022</b>)
-                </div>
+            <div class="publication-item">
+                <b>Large Language Models as Data Preprocessors</b>
+                <a href="https://arxiv.org/pdf/2308.16361">[Paper]</a><br>
+                Haochen Zhang, <u>Yuyang Dong</u>, Chuan Xiao, Masafumi Oyamada<br>
+                2nd International Workshop on Tabular Data Analysis, International Conference on Very Large Data Bases.
+                (<b>TaDA workshop@VLDB 2024</b>)
             </div>
 
-            <h3 class="publication-year">2021</h3>
-            <div class="publication-list">
-                <div class="publication-item">
-                    <b>Efficient Joinable Table Discovery in Data Lakes: A High-Dimensional Similarity-Based Approach</b>
-                    <a href="./papers/PEXESO_ICDE2021.pdf">[Paper]</a>
-                    <a href="./papers/fvpexeso.pdf">[Extended Version]</a><br>
-                    <u>Yuyang Dong</u>, Kunihiro Takeoka, Chuan Xiao, Masafumi Oyamada<br>
-                    International Conference on Data Engineering (<b>ICDE 2021</b>)
-                </div>
-
-                <div class="publication-item">
-                    <b>Quality Control for Hierarchical Classification with Incomplete Annotations</b><br>
-                    Masafumi Enomoto, Kunihiro Takeoka, <u>Yuyang Dong</u>, Masafumi Oyamada, Takeshi Okadome<br>
-                    Pacific-Asia Conference on Knowledge Discovery and Data Mining (<b>PAKDD 2021</b>)
-                </div>
-
-                <div class="publication-item">
-                    <b>Entity Matching with String Transformation and Similarity-Based Features</b><br>
-                    Kazunori Sakai, <u>Yuyang Dong</u>, Masafumi Oyamada, Kunihiro Takeoka, Takeshi Okadome<br>
-                    Workshop on Software Foundations for Data Interoperability (<b>SFDI 2021@VLDB 2021 Workshop</b>)
-                </div>
+            <div class="publication-year">2023</div>
+            <div class="publication-item">
+                <b>QA-Matcher: Unsupervised Entity Matching Using A Question Answering Model</b>
+                <a href="./papers/QA-matcher_pakdd23.pdf">[Slide]</a><br>
+                Shogo Hayashi, <u>Yuyang Dong</u>, Masafumi Oyamada<br>
+                Pacific-Asia Conference on Knowledge Discovery and Data Mining
+                (<b>PAKDD 2023</b>)
             </div>
 
-            <h3 class="publication-year">2020</h3>
-            <div class="publication-list">
-                <div class="publication-item">
-                    <b>Learning from Unsure Responses</b><br>
-                    Kunihiro Takeoka, <u>Yuyang Dong</u>, Masafumi Oyamada<br>
-                    AAAI Conference on Artificial Intelligence (<b>AAAI 2020</b>)
-                </div>
-
-                <div class="publication-item">
-                    <b>NGNC: A Flexible and Efficient Framework for Error-Tolerant Query Autocompletion</b><br>
-                    Yukai Miao, Jianbin Qin, Sheng Hu, <u>Yuyang Dong</u>, Yoshiharu Ishikawa, Makoto Onizuka<br>
-                    Workshop on Software Foundations for Data Interoperability (<b>SFDI 2020@VLDB 2020 Workshop</b>)
-                </div>
-
-                <div class="publication-item">
-                    <b>Continuous Top-k Spatial-Keyword Search on Dynamic Objects</b>
-                    <a href="./papers/vldbj2020-dsk.pdf">[Paper]</a><br>
-                    <u>Yuyang Dong</u>, Chuan Xiao, Hanxiong Chen, Jefferey Xu Yu, Kunihiro Takeoka, Masafumi Oyamada, and Hiroyuki Kitagawa<br>
-                    The VLDB Journal, Springer. (<b>VLDBJ</b>)
-                </div>
+            <div class="publication-item">
+                <b>DeepJoin: Joinable Table Discovery with Pre-trained Language Models</b>
+                <a href="./papers/deep-join-vldb23.pdf">[Slide]</a><br>
+                <u>Yuyang Dong</u>, Chuan Xiao, Takuma Nozawa, Masafumi Enomoto, Masafumi Oyamada<br>
+                International Conference on Very Large Data Bases.
+                (<b>VLDB 2023</b>)
             </div>
 
-            <h3 class="publication-year">2019</h3>
-            <div class="publication-list">
-                <div class="publication-item">
-                    <b>Continuous Search on Dynamic Spatial Keyword Objects</b>
-                    <a href="./papers/ICDE19_DSK.pdf">[Paper]</a><br>
-                    <u>Yuyang Dong</u>, Hanxiong Chen, Hiroyuki kitagawa<br>
-                    Short paper, International Conference on Data Engineering (<b>ICDE 2019</b>)
-                </div>
-
-                <div class="publication-item">
-                    <b>Balanced Nearest Neighborhood Query in Spatial Database</b><br>
-                    Sang Le, <u>Yuyang Dong</u>, Hanxiong Chen, Kazutaka Furuse.<br>
-                    Short paper. International Conference on Big Data and Smart Computing (<b>BigComp 2019</b>)
-                </div>
+            <div class="publication-year">2022</div>
+            <div class="publication-item">
+                <b>Table Enrichment System for Machine Learning</b>
+                <a href="https://arxiv.org/pdf/2204.08235.pdf">[Paper]</a>
+                <a href="https://www.youtube.com/watch?v=HXikNjblUwU&feature=youtu.be">[Demo Youtube]</a><br>
+                <u>Yuyang Dong</u>, Masafumi Oyamada<br>
+                Demo paper, International ACM SIGIR Conference on Research and Development in Information Retrieval (<b>SIGIR 2022</b>)
             </div>
 
-            <h3 class="publication-year">2018</h3>
-            <div class="publication-list">
-                <div class="publication-item">
-                    <b>Weighted Aggregate Reverse Rank Queries</b>
-                    <a href="./papers/TSAS.pdf">[Paper]</a><br>
-                    <u>Yuyang Dong</u>, Hanxiong Chen, Jeffrey Xu Yu, Kazutaka Furuse, Hiroyuki Kitagawa.<br>
-                    ACM Transactions on Spatial Algorithms and Systems (<b>TSAS</b>)
-                </div>
-
-                <div class="publication-item">
-                    <b>Bound-and-filter Framework for Aggregate Reverse Rank Queries</b><br>
-                    <u>Yuyang Dong</u>, Hanxiong Chen, Kazutaka Furuse, Hiroyuki kitagawa<br>
-                    Transactions on Large-Scale Data and Knowledge-Centered Systems (<b>TLDKS</b>)
-                </div>
-
-                <div class="publication-item">
-                    <b>Efficient Methods for Aggregate Reverse Rank Queries</b><br>
-                    <u>Yuyang Dong</u>, Hanxiong Chen, Kazutaka Furuse, Hiroyuki Kitagawa<br>
-                    IEICE Transactions on Information and Systems.
-                </div>
+            <div class="publication-year">2021</div>
+            <div class="publication-item">
+                <b>Efficient Joinable Table Discovery in Data Lakes: A High-Dimensional Similarity-Based Approach</b>
+                <a href="./papers/PEXESO_ICDE2021.pdf">[Paper]</a>
+                <a href="./papers/fvpexeso.pdf">[Extended Version]</a><br>
+                <u>Yuyang Dong</u>, Kunihiro Takeoka, Chuan Xiao, Masafumi Oyamada<br>
+                International Conference on Data Engineering (<b>ICDE 2021</b>)
             </div>
 
-            <h3 class="publication-year">2017</h3>
-            <div class="publication-list">
-                <div class="publication-item">
-                    <b>Grid-Index algorithm for reverse rank queries.</b>
-                    <a href="./papers/EDBT_GIR.pdf">[Paper]</a><br>
-                    <u>Yuyang Dong</u>, Hanxiong Chen, Jeffrey Xu Yu, Kazutaka Furuse, Hiroyuki Kitagawa<br>
-                    International Conference on Extending Database Technology (<b>EDBT 2017</b>)
-                </div>
-
-                <div class="publication-item">
-                    <b>Efficient Processing of Aggregate Reverse Rank Queries.</b><br>
-                    <u>Yuyang Dong</u>, Hanxiong Chen, Hiroyuki kitagawa.<br>
-                    Short paper. International Conference on Database and Expert Systems Applications (<b>DEXA 2017</b>)
-                </div>
+            <div class="publication-item">
+                <b>Quality Control for Hierarchical Classification with Incomplete Annotations</b><br>
+                Masafumi Enomoto, Kunihiro Takeoka, <u>Yuyang Dong</u>, Masafumi Oyamada, Takeshi Okadome<br>
+                Pacific-Asia Conference on Knowledge Discovery and Data Mining (<b>PAKDD 2021</b>)
             </div>
 
-            <h3 class="publication-year">2016</h3>
-            <div class="publication-list">
-                <div class="publication-item">
-                    <b>"Aggregate Reverse Rank Queries"</b>
-                    <a href="./papers/DEXA_ARR_2016.pdf">[Paper]</a><br>
-                    <u>Yuyang Dong</u>, Hanxiong Chen, Kazutaka Furuse, Hiroyuki Kitagawa<br>
-                    International Conference on Database and Expert Systems Applications (<b>DEXA 2016</b>)
-                    (<a href="http://www.kde.cs.tsukuba.ac.jp/papers/award/DEXA2016/DEXA2016_YuyangDong.jpg"><font color="red"><b>Best Paper Award</b></font></a>)
-                </div>
+            <div class="publication-item">
+                <b>Entity Matching with String Transformation and Similarity-Based Features</b><br>
+                Kazunori Sakai, <u>Yuyang Dong</u>, Masafumi Oyamada, Kunihiro Takeoka, Takeshi Okadome<br>
+                Workshop on Software Foundations for Data Interoperability (<b>SFDI 2021@VLDB 2021 Workshop</b>)
             </div>
-        </section>
 
-        <section class="activities">
-            <h2>Activity & Award</h2>
-            <ol>
-                <li>Internship, Cloud & Solution Group Company, <a href="http://www.toshiba.co.jp/">TOSHIBA JAPAN</a> Co., Ltd. 2014.8, Two weeks.</li>
-                <li>Internship, Smart Center, <a href="http://www.nttdata.com/jp/ja/index.html">NTT DATA</a> Co., Ltd. 2014.10, Two weeks.</li>
-                <li>筑波大学・学長表彰, 2019</li>
-                <li>筑波大学・システム情報工学研究科・博士後期課程・総代, 2019</li>
-                <li>DBSJ, 日本データベース学会, 上林奨励賞(DBSJ Kambayashi Young Researcher Award), 2022</li>
-                <li>Reviewer (or External): TKDE Journal, KAIS Journal, IEICE Journal, IEEE ACCESS Journal, IPSJ Journal,<br>ICMR'18, ICML'19,20, ICSC'19, NeurIPS'19,20 AAAI'20,21, DASFAA'20</li>
-                <li>PC or OC: DASFAA'20, DEIM'20, MIPR'21</li>
-            </ol>
-        </section>
-    </div>
+            <div class="publication-year">2020</div>
+            <div class="publication-item">
+                <b>Learning from Unsure Responses</b><br>
+                Kunihiro Takeoka, <u>Yuyang Dong</u>, Masafumi Oyamada<br>
+                AAAI Conference on Artificial Intelligence (<b>AAAI 2020</b>)
+            </div>
+
+            <div class="publication-item">
+                <b>NGNC: A Flexible and Efficient Framework for Error-Tolerant Query Autocompletion</b><br>
+                Yukai Miao, Jianbin Qin, Sheng Hu, <u>Yuyang Dong</u>, Yoshiharu Ishikawa, Makoto Onizuka<br>
+                Workshop on Software Foundations for Data Interoperability (<b>SFDI 2020@VLDB 2020 Workshop</b>)
+            </div>
+
+            <div class="publication-item">
+                <b>Continuous Top-k Spatial-Keyword Search on Dynamic Objects</b>
+                <a href="./papers/vldbj2020-dsk.pdf">[Paper]</a><br>
+                <u>Yuyang Dong</u>, Chuan Xiao, Hanxiong Chen, Jefferey Xu Yu, Kunihiro Takeoka, Masafumi Oyamada, and Hiroyuki Kitagawa<br>
+                The VLDB Journal, Springer. (<b>VLDBJ</b>)
+            </div>
+
+            <div class="publication-year">2019</div>
+            <div class="publication-item">
+                <b>Continuous Search on Dynamic Spatial Keyword Objects</b>
+                <a href="./papers/ICDE19_DSK.pdf">[Paper]</a><br>
+                <u>Yuyang Dong</u>, Hanxiong Chen, Hiroyuki kitagawa<br>
+                Short paper, International Conference on Data Engineering (<b>ICDE 2019</b>)
+            </div>
+
+            <div class="publication-item">
+                <b>Balanced Nearest Neighborhood Query in Spatial Database</b><br>
+                Sang Le, <u>Yuyang Dong</u>, Hanxiong Chen, Kazutaka Furuse.<br>
+                Short paper. International Conference on Big Data and Smart Computing (<b>BigComp 2019</b>)
+            </div>
+
+            <div class="publication-year">2018</div>
+            <div class="publication-item">
+                <b>Weighted Aggregate Reverse Rank Queries</b>
+                <a href="./papers/TSAS.pdf">[Paper]</a><br>
+                <u>Yuyang Dong</u>, Hanxiong Chen, Jeffrey Xu Yu, Kazutaka Furuse, Hiroyuki Kitagawa.<br>
+                ACM Transactions on Spatial Algorithms and Systems (<b>TSAS</b>)
+            </div>
+
+            <div class="publication-item">
+                <b>Bound-and-filter Framework for Aggregate Reverse Rank Queries</b><br>
+                <u>Yuyang Dong</u>, Hanxiong Chen, Kazutaka Furuse, Hiroyuki kitagawa<br>
+                Transactions on Large-Scale Data and Knowledge-Centered Systems (<b>TLDKS</b>)
+            </div>
+
+            <div class="publication-item">
+                <b>Efficient Methods for Aggregate Reverse Rank Queries</b><br>
+                <u>Yuyang Dong</u>, Hanxiong Chen, Kazutaka Furuse, Hiroyuki Kitagawa<br>
+                IEICE Transactions on Information and Systems.
+            </div>
+
+            <div class="publication-year">2017</div>
+            <div class="publication-item">
+                <b>Grid-Index algorithm for reverse rank queries.</b>
+                <a href="./papers/EDBT_GIR.pdf">[Paper]</a><br>
+                <u>Yuyang Dong</u>, Hanxiong Chen, Jeffrey Xu Yu, Kazutaka Furuse, Hiroyuki Kitagawa<br>
+                International Conference on Extending Database Technology (<b>EDBT 2017</b>)
+            </div>
+
+            <div class="publication-item">
+                <b>Efficient Processing of Aggregate Reverse Rank Queries.</b><br>
+                <u>Yuyang Dong</u>, Hanxiong Chen, Hiroyuki kitagawa.<br>
+                Short paper. International Conference on Database and Expert Systems Applications (<b>DEXA 2017</b>)
+            </div>
+
+            <div class="publication-year">2016</div>
+            <div class="publication-item">
+                <b>"Aggregate Reverse Rank Queries"</b>
+                <a href="./papers/DEXA_ARR_2016.pdf">[Paper]</a><br>
+                <u>Yuyang Dong</u>, Hanxiong Chen, Kazutaka Furuse, Hiroyuki Kitagawa<br>
+                International Conference on Database and Expert Systems Applications (<b>DEXA 2016</b>)
+                (<a href="http://www.kde.cs.tsukuba.ac.jp/papers/award/DEXA2016/DEXA2016_YuyangDong.jpg"><font color="red"><b>Best Paper Award</b></font></a>)
+            </div>
+        </div>
+    </section>
+
+    <section id="awards" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">Awards & Activities</h2>
+            <div class="award-item">
+                <h5>🏆 Academic Awards</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-3">🎓 DBSJ Kambayashi Young Researcher Award, 2022</li>
+                    <li class="mb-3">🎓 筑波大学・学長表彰, 2019</li>
+                    <li class="mb-3">🎓 筑波大学・システム情報工学研究科・博士後期課程・総代, 2019</li>
+                </ul>
+            </div>
+
+            <div class="award-item">
+                <h5>💼 Professional Experience</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-3">🏢 Internship, Cloud & Solution Group Company, <a href="http://www.toshiba.co.jp/">TOSHIBA JAPAN</a> Co., Ltd. 2014.8</li>
+                    <li class="mb-3">🏢 Internship, Smart Center, <a href="http://www.nttdata.com/jp/ja/index.html">NTT DATA</a> Co., Ltd. 2014.10</li>
+                </ul>
+            </div>
+
+            <div class="award-item">
+                <h5>📝 Academic Service</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-3">📚 Reviewer: TKDE Journal, KAIS Journal, IEICE Journal, IEEE ACCESS Journal, IPSJ Journal</li>
+                    <li class="mb-3">🎯 Conference Reviews: ICMR'18, ICML'19,20, ICSC'19, NeurIPS'19,20 AAAI'20,21, DASFAA'20</li>
+                    <li class="mb-3">👥 PC/OC Member: DASFAA'20, DEIM'20, MIPR'21</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Active navigation highlighting
+        window.addEventListener('scroll', () => {
+            let current = '';
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
