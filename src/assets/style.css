@@ -9,3 +9,5 @@
 .research-card{min-width:0}
 @media(max-width:760px){.research-grid{grid-template-columns:minmax(0,1fr)}.project-facts{gap:28px}.project-facts strong{white-space:nowrap}}
 @media(max-width:380px){.hero h1{font-size:44px}.hero-actions{gap:18px}.hero-actions .button{gap:18px;font-size:11px}.hero-actions .text-link{font-size:11px;white-space:nowrap}.table-art span{width:25px;height:13px}.table-art b{margin-inline:15px}.table-art .table-clean span{width:23px;height:23px}.project-facts strong{font-size:26px}.visual-top{gap:8px}.visual-top .micro{font-size:6px}.closing>div{gap:16px}.closing .text-link{font-size:10px}.closing .button{font-size:11px;gap:15px}.loop-tabs button{font-size:11px}.loop-tabs button span{margin-right:4px}}
+
+.research-note .vision-detail{grid-column:2;font-size:14px;line-height:1.8;letter-spacing:0;color:var(--muted);margin-bottom:10px}
