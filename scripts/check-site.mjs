@@ -16,3 +16,24 @@ for (const name of await readdir('src/posts')) {
 }
 await access(path.join(root,'assets/social-card.png'));
 console.log(`Checked ${files.length} pages, all local links and anchors, ${papers.length} publications, social image, and draft exclusion.`);
+
+const locales=JSON.parse(await readFile('src/_data/locales.json','utf8'));
+assert.deepEqual(locales.map(t=>t.code).sort(),['en','ja','zh']);
+const keys=Object.keys(locales[0]).sort();
+for(const t of locales){
+ assert.deepEqual(Object.keys(t).sort(),keys,`Incomplete translation keys: ${t.code}`);
+ for(const value of Object.values(t)){assert.equal(typeof value,'string');assert(value.trim(),`Empty translation in ${t.code}`);}
+ for(const suffix of ['','blog/','publications/']){
+  const file=path.join(root,t.prefix,suffix,'index.html');
+  const html=await readFile(file,'utf8');
+  assert(html.includes(`<html lang="${t.code}">`),`Wrong page language: ${file}`);
+  for(const other of locales) assert(html.includes(`href="${other.prefix}${suffix}" lang="${other.code}"`),`Missing equivalent language link: ${file}`);
+  assert(!/LLM Team Tech Lead|Read my CV|nav-cv|brand-mark/.test(html));
+  if(suffix==='publications/')assert.equal((html.match(/class="paper-row archive-paper"/g)||[]).length,papers.length);
+ }
+ await access(path.join(root,t.prefix,'feed.xml'));
+}
+console.log('Checked all three languages, equivalent routes, shared publication data, and localized feeds.');
+
+const removedCopy=['Building intelligence.','Across the whole system.','Ideas, made concrete.','A place to think','in the open.','Research depth.','Real-world models.','Good research starts','with a better question.','From spatial databases to foundation models.','Ideas worth','thinking through.','Papers, systems, and tutorials from 2016 onward.'];
+for(const file of files){const html=await readFile(file,'utf8');for(const phrase of removedCopy)assert(!html.includes(phrase),`Removed copy returned: ${phrase}`);}

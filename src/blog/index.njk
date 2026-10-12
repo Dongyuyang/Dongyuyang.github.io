@@ -1,20 +1,17 @@
 ---
 layout: base.njk
-title: Blog & Notes
-nav: blog
-description: Notes on data, foundation models, multimodal AI, and agents. Writing in English and Chinese by Yuyang Dong.
+pageKey: blog
+pagination:
+  data: locales
+  size: 1
+  alias: locale
+permalink: "{{ locale.prefix }}blog/"
 ---
-<div class="wrap page-intro"><a class="back-link" href="/">← Home</a><div class="eyebrow">The research notebook</div><h1>Ideas worth<br><em>thinking through.</em></h1><p>On data, models, agents—and what happens when they meet.<br>A space for research notes and reflections, in English and Chinese.</p><div class="blog-topics"><span>Data-centric AI</span><span>Foundation models</span><span>Multimodal</span><span>Agents</span></div></div>
-<section class="wrap blog-body" aria-labelledby="notes-title"><div class="section-heading small-heading"><h2 id="notes-title">On this site</h2><a class="text-link" href="/feed.xml">RSS feed ↗</a></div>
-{% if collections.publishedPosts.length %}
- <div class="blog-filter" role="group" aria-label="Filter articles by language"><button class="active" data-language="all" aria-pressed="true">All articles</button><button data-language="en" aria-pressed="false">English</button><button data-language="zh" aria-pressed="false">中文</button></div>
- <div class="writing-list">{% for post in collections.publishedPosts %}<article class="writing-row post-item" data-lang="{{ post.data.lang or 'en' }}"><span class="micro">{{ post.date | readableDate }}<br><span class="muted">{% if post.data.lang == 'zh' %}中文{% else %}ENGLISH{% endif %}</span></span><div><h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3><p>{{ post.data.description }}</p></div><a href="{{ post.url }}" aria-label="Read {{ post.data.title }}">↗</a></article>{% endfor %}</div><p class="filter-empty" hidden>No articles in this language yet.</p>
-{% else %}
- <div class="notebook-empty"><span class="notebook-mark" aria-hidden="true">[ &nbsp; ]</span><div><h3>A notebook in progress.</h3><p>New essays will appear here. In the meantime, explore the technical writing and talks below.</p></div></div>
-{% endif %}
+{% set t = locale %}
+<div class="wrap page-intro"><a class="back-link" href="{{ t.prefix }}">← {{ t.home }}</a><h1>{{ t.blog }}</h1></div>
+<section class="wrap blog-body" aria-labelledby="notes-title"><div class="section-heading small-heading"><h2 id="notes-title">{{ t.onSite }}</h2><a class="text-link" href="{{ t.prefix }}feed.xml">{{ t.followRSS }} ↗</a></div>
+{% set entries = collections.publishedPosts | postsFor(t.code) %}
+{% if entries.length %}<div class="writing-list">{% for post in entries %}<article class="writing-row post-item"><span class="micro">{{ post.date | readableDate(t.code) }}</span><div><h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3><p>{{ post.data.description }}</p></div><a href="{{ post.url }}" aria-label="{{ t.read }}: {{ post.data.title }}">↗</a></article>{% endfor %}</div>
+{% else %}<p class="notebook-empty">{{ t.noPosts }}</p>{% endif %}
 </section>
-<section class="wrap section elsewhere"><span class="eyebrow">Published elsewhere</span><h2>From the lab.</h2><p class="muted">Technical writing, interviews, and lecture materials.</p><div class="writing-list">
-<a class="writing-row" href="https://www.sbintuitions.co.jp/blog/entry/2026/06/30/100000"><span class="micro">JUN 30, 2026<br><span class="muted">OFFICIAL BLOG · 日本語</span></span><div><h3>Sarashina3 mini / nano: building Japanese LLMs from scratch</h3><p>An inside look at the training pipeline, 30T-token pretraining, reinforcement learning, and agent capabilities.</p><span class="source-label">SB Intuitions TECH BLOG</span></div><span aria-hidden="true">↗</span></a>
-<a class="writing-row" href="/papers/tablellm_最強DB_YuyangDong.pdf"><span class="micro">JUL 2025<br><span class="muted">LECTURE · 日本語</span></span><div><h3>大規模言語モデルの表データ処理活用</h3><p>Lecture slides on language models and tabular data, from 最強DB講義 #37.</p><span class="source-label">PDF · LECTURE SLIDES</span></div><span aria-hidden="true">↗</span></a>
-<a class="writing-row" href="https://www.nec.com/en/global/rd/technologies/202310/index.html"><span class="micro">SEP 01, 2023<br><span class="muted">INTERVIEW · ENGLISH</span></span><div><h3>Behind the scenes of NEC's LLM development</h3><p>A conversation with the development team on Japanese training data, model design, and evaluation.</p><span class="source-label">NEC · FEATURED TECHNOLOGIES</span></div><span aria-hidden="true">↗</span></a>
-</div></section>
+<section class="wrap section elsewhere"><h2>{{ t.elsewhere }}</h2>{% include "external-writing.njk" %}</section>

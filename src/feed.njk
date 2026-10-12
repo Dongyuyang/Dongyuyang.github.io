@@ -1,6 +1,10 @@
 ---
-permalink: /feed.xml
+pagination:
+  data: locales
+  size: 1
+  alias: locale
+permalink: "{{ locale.prefix }}feed.xml"
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Yuyang Dong — Blog &amp; Notes</title><link>{{ site.url }}/blog/</link><description>Research notes on data, models, and agents. English and Chinese.</description><atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml"/>{% for post in collections.publishedPosts %}<item><title>{{ post.data.title | xmlEscape | safe }}</title><link>{{ post.url | absoluteUrl }}</link><guid>{{ post.url | absoluteUrl }}</guid><description>{{ post.data.description | xmlEscape | safe }}</description><pubDate>{{ post.date.toUTCString() }}</pubDate></item>{% endfor %}</channel></rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Yuyang Dong — {{ locale.blog }}</title><link>{{ (locale.prefix + 'blog/') | absoluteUrl }}</link><description>{{ locale.description | xmlEscape | safe }}</description><language>{{ locale.code }}</language><atom:link href="{{ (locale.prefix + 'feed.xml') | absoluteUrl }}" rel="self" type="application/rss+xml"/>{% set entries = collections.publishedPosts | postsFor(locale.code) %}{% for post in entries %}<item><title>{{ post.data.title | xmlEscape | safe }}</title><link>{{ post.url | absoluteUrl }}</link><guid>{{ post.url | absoluteUrl }}</guid><description>{{ post.data.description | xmlEscape | safe }}</description><pubDate>{{ post.date.toUTCString() }}</pubDate></item>{% endfor %}</channel></rss>

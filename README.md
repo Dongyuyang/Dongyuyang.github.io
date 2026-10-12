@@ -1,70 +1,81 @@
-# Yuyang Dong / David Dong
+# Yuyang Dong (David Dong)
 
-Personal research homepage: https://dongyuyang.github.io
+个人研究主页，使用 Eleventy 构建，由 GitHub Actions 发布到 GitHub Pages。
 
-English homepage, bilingual Markdown blog, and publication archive.
-Built with Eleventy; published automatically through GitHub Actions to GitHub Pages.
+- English：https://dongyuyang.github.io/
+- 日本語：https://dongyuyang.github.io/ja/
+- 中文：https://dongyuyang.github.io/zh/
 
-## 写博客（最常用）
+## 三语同步维护
 
-1. 在 GitHub 打开 `src/posts/`，点击 **Add file → Create new file**。
-2. 文件名用英文短名，如 `why-data-matters.md`。
-3. 复制下面的内容，改标题、摘要、日期和正文，提交到 `master`。
-4. 等待仓库 **Actions → Build and deploy homepage** 完成，文章会自动出现在 `/blog/`、首页和 RSS。
+网站今后按日文、中文、英文三版一起更新。
+
+- `src/_data/locales.json`：三语文案，三个对象使用相同的键。改内容时同时修改三版。
+- `src/index.njk`、`src/blog/index.njk`、`src/publications/index.njk`：共享布局，一次改动作用于三版。
+- `src/_data/publications.json`：共享论文资料。题名、作者、会议名称保留发表时的原文。
+- `src/_data/site.json`：姓名、社交账号等共同信息。
+- `src/assets/style.css`：所有语言共用的布局和字号。
+- `src/_includes/base.njk`：导航、语言切换、SEO 和页脚。
+
+语言切换保留当前页面、主页位置和论文搜索条件。文章通过 `translationKey` 对应到同一篇文章的另一语言版本。三语都有独立的首页、博客、论文列表、RSS 和页面元数据。
+
+## 发布博客
+
+`src/posts/` 中有三份 `first-note` 草稿模板。复制后修改文件名和内容，例如：
+
+- `data-models-agents.en.md`
+- `data-models-agents.ja.md`
+- `data-models-agents.zh.md`
+
+三个文件共用一个 `translationKey`，各自设置 `lang: en`、`lang: ja`、`lang: zh`。标题、摘要和正文分别翻译。例如中文版本：
 
 ```markdown
 ---
-title: "从数据到 Agent：一个研究问题"
-description: "这里写一两句话，说明这篇文章讨论什么。"
+title: "从数据到模型与智能体"
+description: "文章摘要。"
 date: 2026-10-12
 lang: zh
-draft: false
+translationKey: data-models-agents
+draft: true
 ---
 
-正文从这里开始。支持中文和英文。
-
-## 一个观察
-
-支持 **粗体**、链接、列表、图片和代码块。
+中文正文。
 ```
 
-英文文章设置 `lang: en`。草稿设置 `draft: true`，不会生成公开网页，也不会进入博客列表或 RSS。
-**注意：这个 GitHub 仓库是公开的，draft 只是不发布网页；不要把私人笔记或机密内容提交到仓库。**
-`src/posts/first-note.md` 是一份不会发布的模板。修改文件名会改变文章地址。
+三版完成后，**一起**改为 `draft: false` 并在同一次提交中发布。缺少任意语言、语言重复、缺少有效 `translationKey`，构建都会阻止发布。
 
-文章图片放在 `src/assets/`，正文使用 `![描述](/assets/文件名.png)`。
-修改已发表文章：编辑对应 Markdown 文件并提交即可。
+对应网址：
 
-## 修改主页
+- `/blog/data-models-agents/`
+- `/ja/blog/data-models-agents/`
+- `/zh/blog/data-models-agents/`
 
-- `src/index.njk`：首页文案、研究项目、履历。
-- `src/_data/publications.json`：完整论文列表；首页自动取最新四项。
-- `src/_data/site.json`：个人信息、社交链接。
-- `src/assets/style.css`：视觉样式和手机布局。
-- `src/assets/site.js`：研究层切换、论文搜索、语言筛选、阅读进度、手机菜单。
-- `src/_includes/post.njk`：文章阅读页模板。
-- `papers/`：论文 PDF，原链接保持不变。
+正文图片放在 `src/assets/`，使用 `![描述](/assets/文件名.png)`。
 
-当前主页口径：SB Intuitions 为在职，NEC cotomi 为核心成员。不展示 Initial S。
-CV 不在网站展示或发布；本地 CV 文件通过 .gitignore 保留，不提交到仓库。
-没有原创文章时，博客明确显示待更新状态，并展示已有官方文章、采访和讲义。
+这是公开 GitHub 仓库。`draft: true` 只是不生成网页，源文件仍可在仓库看到；私人内容不要提交。
 
-## 本地预览
+## 内容口径
 
-需要 Node.js 22 或更新版本。
+SB Intuitions 为当前任职，保留 Chief Research Scientist，不显示 LLM Team Tech Lead。NEC cotomi / cotomi-v2 写核心成员。首页展示原照片和个人头像。不展示 Initial S，不发布 CV 文件。CV 本地副本由 `.gitignore` 排除。
+
+## 本地预览与发布
+
+Node.js 22 或更新版本：
 
 ```sh
 npm ci
 npm run dev
 ```
 
-打开终端显示的地址（默认 http://localhost:8098）。
+预览地址为 http://localhost:8098。
+
+发布前：
 
 ```sh
 npm run build
 npm run check
 ```
 
-`_site/` 是生成目录，不提交。GitHub Pages 的发布来源应设为 **GitHub Actions**。
-主分支 `master` 有新提交后会自动构建、检查站内链接并部署；可在 Actions 手动重新运行。
-所有旧论文 PDF 和照片保持原网址可访问。CV 下载地址不再发布。
+检查包含三语文案键、页面语言和互链、内部链接、论文数量、草稿排除和图片资源。改动提交到 `master` 后自动发布；以 GitHub Actions 的部署成功结果为准。
+
+`_site/` 为生成目录，不提交。CSS 和 JavaScript 使用内容版本号，避免浏览器沿用旧版资源。

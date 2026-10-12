@@ -1,10 +1,14 @@
 ---
 layout: base.njk
-title: Publications
-nav: publications
-description: Publications by Yuyang Dong on language models, tabular data, multimodal understanding, data discovery, and spatial databases.
+pageKey: publications
+pagination:
+  data: locales
+  size: 1
+  alias: locale
+permalink: "{{ locale.prefix }}publications/"
 ---
-<div class="wrap page-intro"><a class="back-link" href="/">← Home</a><span class="eyebrow">The research archive</span><h1>Publications<span class="accent">.</span></h1><p>From spatial databases to foundation models.<br>Papers, systems, and tutorials from 2016 onward.</p><a class="text-link" href="{{ site.dblp }}">View on DBLP ↗</a></div>
-<section class="wrap archive-section"><label class="search-box"><span>Find a paper</span><input id="paper-search" name="q" type="search" placeholder="Search by title, author, year, or venue…" autocomplete="off"></label><p class="small muted" id="paper-count" role="status">{{ publications.length }} publications and tutorials · * Equal contribution</p><div class="paper-list">
-{% for p in publications %}<article class="paper-row archive-paper"><div class="paper-year">{{ p.year }}</div><div><h2>{{ p.title }}</h2><p>{{ p.authors }}</p><p class="paper-venue">{{ p.venue }}</p><div class="project-links">{% for link in p.links %}<a href="{{ link.url }}">{{ link.label }} ↗</a>{% endfor %}</div></div></article>{% endfor %}
-</div><p class="filter-empty" id="paper-empty" hidden>No matching papers. Try another title, year, or keyword.</p></section>
+{% set t = locale %}
+<div class="wrap page-intro"><a class="back-link" href="{{ t.prefix }}">← {{ t.home }}</a><h1>{{ t.publications }}</h1><a class="text-link" href="{{ site.dblp }}">{{ t.dblp }} ↗</a></div>
+<section class="wrap archive-section"><label class="search-box"><span>{{ t.findPaper }}</span><input id="paper-search" name="q" type="search" placeholder="{{ t.searchPlaceholder }}" autocomplete="off"></label><p class="small muted" id="paper-count" role="status" data-template="{{ t.paperCount }}" data-equal="{{ t.equal }}">{{ t.paperCount | replace('{count}', publications.length) | replace('{total}', publications.length) }} · {{ t.equal }}</p><div class="paper-list">
+{% for p in publications %}<article class="paper-row archive-paper"><div class="paper-year">{{ p.year }}</div><div><h2>{{ p.title }}</h2><p>{{ p.authors }}</p><p class="paper-venue">{{ p.venue }}</p><div class="project-links">{% for link in p.links %}<a href="{{ link.url }}">{{ link.label | linkLabel(t.code) }} ↗</a>{% endfor %}</div></div></article>{% endfor %}
+</div><p class="filter-empty" id="paper-empty" hidden>{{ t.paperEmpty }}</p></section>
