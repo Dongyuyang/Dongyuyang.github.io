@@ -1,6 +1,7 @@
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 const locales = JSON.parse(readFileSync('src/_data/locales.json', 'utf8'));
+const externalWriting = JSON.parse(readFileSync('src/_data/externalWriting.json', 'utf8'));
 const getLocale = code => locales.find(t => t.code === code) || locales[0];
 export default function(eleventyConfig) {
   const assetVersion = createHash('sha256').update(readFileSync('src/assets/style.css')).update(readFileSync('src/assets/site.js')).digest('hex').slice(0, 12);
@@ -9,6 +10,19 @@ export default function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({'src/assets': 'assets'});
   eleventyConfig.addFilter('getLocale', getLocale);
   eleventyConfig.addFilter('postsFor', (posts, code) => posts.filter(post => post.data.lang === code));
+  eleventyConfig.addFilter('writingFor', (posts, code) => {
+    const t = getLocale(code);
+    const local = posts.filter(post => post.data.lang === code).map(post => ({
+      date: post.date, url: post.url, title: post.data.title, description: post.data.description
+    }));
+    const external = externalWriting.map(entry => {
+      const date = new Date(`${entry.date}T00:00:00Z`);
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(entry.date) || !Number.isFinite(date.getTime()) || date.toISOString().slice(0, 10) !== entry.date) throw Error(`Invalid writing date: ${entry.url}`);
+      if (!t[entry.titleKey] || !t[entry.descriptionKey]) throw Error(`Missing ${code} writing translation: ${entry.url}`);
+      return {...entry, date, title: t[entry.titleKey], description: t[entry.descriptionKey]};
+    });
+    return [...local, ...external].sort((a, b) => b.date - a.date || a.url.localeCompare(b.url));
+  });
   eleventyConfig.addFilter('pageAlternates', (posts, pageKey, translationKey) => {
     if (pageKey === 'post') return posts.filter(post => post.data.translationKey === translationKey).map(post => ({...getLocale(post.data.lang), url:post.url}));
     const suffix = {home:'', blog:'blog/', publications:'publications/', notFound:'404.html'}[pageKey] || '';

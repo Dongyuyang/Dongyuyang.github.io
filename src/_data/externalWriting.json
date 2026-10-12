@@ -1,0 +1,38 @@
+[
+  {
+    "date": "2026-06-30",
+    "url": "https://www.sbintuitions.co.jp/blog/entry/2026/06/30/100000",
+    "source": "SB Intuitions",
+    "language": "ja",
+    "titleKey": "blogTitle",
+    "descriptionKey": "blogDescription",
+    "dateSource": "https://www.sbintuitions.co.jp/blog/entry/2026/06/30/100000"
+  },
+  {
+    "date": "2025-07-09",
+    "url": "/papers/tablellm_最強DB_YuyangDong.pdf",
+    "source": "DBSJ · PDF",
+    "language": "ja",
+    "titleKey": "lectureTitle",
+    "descriptionKey": "lectureDescription",
+    "dateSource": "https://dbsj.org/dbsj_lecture/"
+  },
+  {
+    "date": "2025-04-02",
+    "url": "https://zenn.dev/dongyuyang/articles/de0f432de66dd6",
+    "source": "Zenn",
+    "language": "ja",
+    "titleKey": "zennFusionTitle",
+    "descriptionKey": "zennFusionDescription",
+    "dateSource": "https://zenn.dev/dongyuyang/articles/de0f432de66dd6"
+  },
+  {
+    "date": "2023-09-01",
+    "url": "https://www.nec.com/en/global/rd/technologies/202310/index.html",
+    "source": "NEC",
+    "language": "en",
+    "titleKey": "interviewTitle",
+    "descriptionKey": "interviewDescription",
+    "dateSource": "https://www.nec.com/en/global/rd/technologies/202310/index.html"
+  }
+]

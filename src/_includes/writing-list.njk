@@ -1,0 +1,5 @@
+<div class="writing-list">
+{% for entry in entries %}
+<a class="writing-row" href="{{ entry.url }}"><span class="micro"><time datetime="{{ entry.date | isoDate }}">{{ entry.date | readableDate(t.code) }}</time>{% if entry.source %}<br><span class="muted">{{ entry.source }} · {% if entry.language == 'ja' %}{{ t.japanese }}{% else %}{{ t.english }}{% endif %}</span>{% endif %}</span><div><h3>{{ entry.title }}</h3><p>{{ entry.description }}</p></div><span aria-hidden="true">↗</span></a>
+{% endfor %}
+</div>

@@ -35,5 +35,24 @@ for(const t of locales){
 }
 console.log('Checked all three languages, equivalent routes, shared publication data, and localized feeds.');
 
+const externalWriting=JSON.parse(await readFile('src/_data/externalWriting.json','utf8'));
+for(const t of locales){
+ for(const suffix of ['','blog/']){
+  const html=await readFile(path.join(root,t.prefix,suffix,'index.html'),'utf8');
+  const dates=[...html.matchAll(/<time datetime="([^"]+)">/g)].map(match=>Date.parse(match[1]));
+  assert(dates.length>=externalWriting.length,`Missing dated writing entries: ${t.code}/${suffix}`);
+  assert(dates.every((date,i)=>Number.isFinite(date)&&(i===0||dates[i-1]>=date)),`Writing must be newest first: ${t.code}/${suffix}`);
+  for(const entry of externalWriting){
+   assert.equal(html.split(`class="writing-row" href="${entry.url}"`).length-1,1,`Missing or duplicate writing link: ${entry.url}`);
+   assert(html.includes(t[entry.titleKey]),`Missing localized writing title: ${entry.url}`);
+  }
+ }
+ const feed=await readFile(path.join(root,t.prefix,'feed.xml'),'utf8');
+ const dates=[...feed.matchAll(/<pubDate>([^<]+)<\/pubDate>/g)].map(match=>Date.parse(match[1]));
+ assert(dates.every((date,i)=>Number.isFinite(date)&&(i===0||dates[i-1]>=date)),`RSS must be newest first: ${t.code}`);
+ for(const entry of externalWriting)assert(feed.includes(new URL(entry.url,'https://dongyuyang.github.io').href),`Missing RSS writing: ${entry.url}`);
+}
+console.log('Checked unified writing chronology, localized external entries, and RSS dates.');
+
 const removedCopy=['Building intelligence.','Across the whole system.','Ideas, made concrete.','A place to think','in the open.','Research depth.','Real-world models.','Good research starts','with a better question.','From spatial databases to foundation models.','Ideas worth','thinking through.','Papers, systems, and tutorials from 2016 onward.'];
 for(const file of files){const html=await readFile(file,'utf8');for(const phrase of removedCopy)assert(!html.includes(phrase),`Removed copy returned: ${phrase}`);}

@@ -88,9 +88,8 @@ permalink: "{{ locale.prefix }}"
 </div></section>
 <section class="section wrap" id="news">
  <div class="section-heading"><h2>{{ t.blog }}</h2><a class="text-link" href="{{ t.prefix }}blog/">{{ t.visitBlog }} ↗</a></div>
- {% set entries = collections.publishedPosts | postsFor(t.code) %}
- {% if entries.length %}<div class="writing-list">{% for post in entries %}{% if loop.index <= 3 %}<a class="writing-row" href="{{ post.url }}"><span class="micro">{{ post.date | readableDate(t.code) }}</span><div><h3>{{ post.data.title }}</h3><p>{{ post.data.description }}</p></div><span aria-hidden="true">↗</span></a>{% endif %}{% endfor %}</div>{% endif %}
- {% include "external-writing.njk" %}
+ {% set entries = collections.publishedPosts | writingFor(t.code) %}
+ {% include "writing-list.njk" %}
 </section>
 <section class="section about-section" id="about"><div class="wrap about-grid"><div><h2>{{ t.about }}</h2><a class="text-link" href="{{ site.linkedin }}">{{ t.connect }} ↗</a></div><div class="timeline"><article><span class="micro accent">{{ t.currentOsaka }}</span><h3>{{ t.osaka }}</h3><p>{{ t.invited }}</p></article><article><span class="micro accent">{{ t.currentSB }}</span><h3>SB Intuitions <small>({{ t.softbank }})</small></h3><p>{{ t.chief }}<br>{{ t.sarashinaWork }}</p></article><article><span class="micro muted">{{ t.pastNEC }}</span><h3>NEC Corporation</h3><p>{{ t.necRole }}<br>{{ t.necWork }}</p><a href="https://www.nec.com/en/global/rd/technologies/202310/index.html">{{ t.necInterview }} ↗</a></article><article><span class="micro muted">2014 — 2019</span><h3>{{ t.tsukuba }}</h3><p>{{ t.masters }}</p></article><article><span class="micro muted">2013</span><h3>{{ t.cumt }}</h3><p>{{ t.bachelor }}</p></article></div></div>
  <div class="wrap awards-strip" id="awards"><span class="micro">{{ t.awards }}</span><div><strong>{{ t.awardDB }}</strong><span>2022</span></div><div><strong>{{ t.awardTsukuba }}</strong><span>2019</span></div><div><strong>{{ t.awardDEXA }}</strong><span>2016</span></div></div>

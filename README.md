@@ -52,6 +52,14 @@ draft: true
 
 正文图片放在 `src/assets/`，使用 `![描述](/assets/文件名.png)`。
 
+## 收录外部文章
+
+外部文章、专访和讲座保存在 `src/_data/externalWriting.json`。`date` 使用来源确认的发布日期（讲座使用活动日期），格式为 `YYYY-MM-DD`，`dateSource` 保留核对来源。收录日不替代原发布日期。
+
+`titleKey` 和 `descriptionKey` 对应 `src/_data/locales.json` 中的三语标题与简介；`language` 标明链接内容的原文语言。收录外部链接不等于提供三语全文翻译。
+
+首页、博客和 RSS 使用同一个 `writingFor` 列表，将站内文章与外部条目合并，按日期从新到旧排序。新增条目不用手动调整顺序。
+
 这是公开 GitHub 仓库。`draft: true` 只是不生成网页，源文件仍可在仓库看到；私人内容不要提交。
 
 ## 内容口径

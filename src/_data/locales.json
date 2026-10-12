@@ -108,7 +108,9 @@
     "linkCode": "Code",
     "hfModel": "HF model",
     "demoVideo": "Video demo",
-    "extendedVersion": "Extended version"
+    "extendedVersion": "Extended version",
+    "zennFusionTitle": "Multimodal model merging: selective parameter fusion between VLMs and LLMs",
+    "zennFusionDescription": "Experiments merging Qwen2.5-VL and Qwen2.5, comparing self-attention-only merging and layer-dependent weights. Japanese article on Zenn."
   },
   {
     "code": "ja",
@@ -219,7 +221,9 @@
     "linkCode": "コード",
     "hfModel": "HF モデル",
     "demoVideo": "デモ動画",
-    "extendedVersion": "拡張版"
+    "extendedVersion": "拡張版",
+    "zennFusionTitle": "マルチモーダルモデル融合の試し：Vision-Language ModelとLanguage Modelの間の選択的パラメータ統合",
+    "zennFusionDescription": "Qwen2.5-VL と Qwen2.5 の融合実験。self-attention のみのマージと、層ごとに重みを変える手法を比較した Zenn 記事。"
   },
   {
     "code": "zh",
@@ -330,6 +334,8 @@
     "linkCode": "代码",
     "hfModel": "HF 模型",
     "demoVideo": "演示视频",
-    "extendedVersion": "扩展版本"
+    "extendedVersion": "扩展版本",
+    "zennFusionTitle": "多模态模型融合尝试：VLM 与 LLM 之间的选择性参数融合",
+    "zennFusionDescription": "Qwen2.5-VL 与 Qwen2.5 的模型融合实验，比较仅合并 self-attention 参数及分层权重策略。发表于 Zenn，原文为日语。"
   }
 ]
