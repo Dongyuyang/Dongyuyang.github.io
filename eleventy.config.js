@@ -1,4 +1,8 @@
+import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
 export default function(eleventyConfig) {
+  const assetVersion = createHash('sha256').update(readFileSync('src/assets/style.css')).update(readFileSync('src/assets/site.js')).digest('hex').slice(0, 12);
+  eleventyConfig.addGlobalData('assetVersion', assetVersion);
   for (const path of ['papers', 'photo.jpg', 'test_pdfs']) eleventyConfig.addPassthroughCopy(path);
   eleventyConfig.addPassthroughCopy({'src/assets': 'assets'});
   eleventyConfig.addFilter('readableDate', value => new Date(value).toLocaleDateString('en-US', {year:'numeric', month:'long', day:'numeric', timeZone:'UTC'}));
