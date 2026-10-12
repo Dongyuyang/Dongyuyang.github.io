@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="{{ lang or 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1015">
+  <title>{% if title %}{{ title }} — {% endif %}Yuyang Dong · David Dong</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <link rel="canonical" href="{{ page.url | absoluteUrl }}">
+  <meta property="og:type" content="{% if isPost %}article{% else %}website{% endif %}">
+  <meta property="og:title" content="{% if title %}{{ title }} — {% endif %}Yuyang Dong">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <meta property="og:url" content="{{ page.url | absoluteUrl }}">
+  <meta property="og:image" content="{{ '/assets/social-card.png' | absoluteUrl }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="application/rss+xml" title="Yuyang Dong — Blog" href="/feed.xml">
+  <link rel="stylesheet" href="/assets/style.css">
+  <script src="/assets/site.js" defer></script>
+</head>
+<body class="{% if isHome %}home{% endif %}">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+ <div class="header-inner wrap">
+  <a class="brand" href="/" aria-label="Yuyang Dong — Home"><span class="brand-mark" aria-hidden="true">yd<span>_</span></span><span>Yuyang Dong<span class="brand-alias"> / David Dong</span></span></a>
+  <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu <span aria-hidden="true">+</span></button>
+  <nav id="main-nav" aria-label="Main navigation">
+   <a href="/#research"{% if nav == 'research' %} aria-current="page"{% endif %}>Research</a>
+   <a href="/publications/"{% if nav == 'publications' %} aria-current="page"{% endif %}>Publications</a>
+   <a href="/blog/"{% if nav == 'blog' %} aria-current="page"{% endif %}>Blog</a>
+   <a href="/#about">About</a>
+   <a class="nav-cv" href="{{ site.cv }}">CV <span aria-hidden="true">↗</span></a>
+  </nav>
+ </div>
+</header>
+<main id="main">{{ content | safe }}</main>
+<footer class="site-footer wrap">
+ <div><a class="footer-name" href="/">Yuyang Dong <span>/ David Dong</span></a><p>Data. Models. Agents. A connected view of AI.</p></div>
+ <div class="footer-links"><a href="{{ site.github }}">GitHub ↗</a><a href="{{ site.linkedin }}">LinkedIn ↗</a><a href="/feed.xml">RSS ↗</a><span>© 2026 Yuyang Dong</span></div>
+</footer>
+</body>
+</html>

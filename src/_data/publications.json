@@ -1,0 +1,254 @@
+[
+  {
+    "title": "Adaptive Layer Selection for Layer-Wise Token Pruning in LLM Inference",
+    "year": 2026,
+    "authors": "Rei Taniguchi, Yuyang Dong, Makoto Onizuka, Chuan Xiao",
+    "venue": "Findings of ACL · 2026",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://aclanthology.org/2026.findings-acl.48/"
+      }
+    ]
+  },
+  {
+    "title": "SCAN: Semantic Document Layout Analysis for Textual and Visual Retrieval-Augmented Generation",
+    "year": 2026,
+    "authors": "Nobuhiro Ueda*, Yuyang Dong*, Krisztián Boros, Daiki Ito, Takuya Sera, Masafumi Oyamada",
+    "venue": "Findings of EACL · 2026",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://aclanthology.org/2026.findings-eacl.82/"
+      }
+    ]
+  },
+  {
+    "title": "Learning Deliberately, Acting Intuitively: Unlocking Test-Time Reasoning in Multimodal LLMs",
+    "year": 2025,
+    "authors": "Yahan Yu, Yuyang Dong , Masafumi Oyamada",
+    "venue": "arXiv preprint · 2025",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/pdf/2507.06999"
+      }
+    ]
+  },
+  {
+    "title": "Jellyfish: Instruction-Tuning Local Large Language Models for Data Preprocessing",
+    "year": 2024,
+    "authors": "Haochen Zhang*, Yuyang Dong*, Chuan Xiao, Masafumi Oyamada",
+    "venue": "EMNLP · 2024",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://aclanthology.org/2024.emnlp-main.497/"
+      },
+      {
+        "label": "HF model",
+        "url": "https://huggingface.co/NECOUDBFM"
+      }
+    ]
+  },
+  {
+    "title": "On the Use of Large Language Models for Table Tasks (Tutorial)",
+    "year": 2024,
+    "authors": "Yuyang Dong , Masafumi Oyamada, Chuan Xiao, Haochen Zhang",
+    "venue": "33rd ACM International Conference on Information and Knowledge Management ( CIKM 2024 )",
+    "links": [
+      {
+        "label": "Github page",
+        "url": "https://dongyuyang.github.io/tableLLM-tutorial/"
+      }
+    ]
+  },
+  {
+    "title": "Large Language Models as Data Preprocessors",
+    "year": 2024,
+    "authors": "Haochen Zhang, Yuyang Dong , Chuan Xiao, Masafumi Oyamada",
+    "venue": "2nd International Workshop on Tabular Data Analysis, International Conference on Very Large Data Bases. ( TaDA workshop@VLDB 2024 )",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/pdf/2308.16361"
+      }
+    ]
+  },
+  {
+    "title": "QA-Matcher: Unsupervised Entity Matching Using A Question Answering Model",
+    "year": 2023,
+    "authors": "Shogo Hayashi, Yuyang Dong , Masafumi Oyamada",
+    "venue": "Pacific-Asia Conference on Knowledge Discovery and Data Mining ( PAKDD 2023 )",
+    "links": [
+      {
+        "label": "Slide",
+        "url": "/papers/QA-matcher_pakdd23.pdf"
+      }
+    ]
+  },
+  {
+    "title": "DeepJoin: Joinable Table Discovery with Pre-trained Language Models",
+    "year": 2023,
+    "authors": "Yuyang Dong , Chuan Xiao, Takuma Nozawa, Masafumi Enomoto, Masafumi Oyamada",
+    "venue": "International Conference on Very Large Data Bases. ( VLDB 2023 )",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2212.07588"
+      },
+      {
+        "label": "Slide",
+        "url": "/papers/deep-join-vldb23.pdf"
+      }
+    ]
+  },
+  {
+    "title": "Table Enrichment System for Machine Learning",
+    "year": 2022,
+    "authors": "Yuyang Dong , Masafumi Oyamada",
+    "venue": "Demo paper, International ACM SIGIR Conference on Research and Development in Information Retrieval ( SIGIR 2022 )",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/pdf/2204.08235.pdf"
+      },
+      {
+        "label": "Demo Youtube",
+        "url": "https://www.youtube.com/watch?v=HXikNjblUwU&feature=youtu.be"
+      }
+    ]
+  },
+  {
+    "title": "Efficient Joinable Table Discovery in Data Lakes: A High-Dimensional Similarity-Based Approach",
+    "year": 2021,
+    "authors": "Yuyang Dong , Kunihiro Takeoka, Chuan Xiao, Masafumi Oyamada",
+    "venue": "International Conference on Data Engineering ( ICDE 2021 )",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "/papers/PEXESO_ICDE2021.pdf"
+      },
+      {
+        "label": "Extended Version",
+        "url": "/papers/fvpexeso.pdf"
+      }
+    ]
+  },
+  {
+    "title": "Quality Control for Hierarchical Classification with Incomplete Annotations",
+    "year": 2021,
+    "authors": "Masafumi Enomoto, Kunihiro Takeoka, Yuyang Dong , Masafumi Oyamada, Takeshi Okadome",
+    "venue": "Pacific-Asia Conference on Knowledge Discovery and Data Mining ( PAKDD 2021 )",
+    "links": []
+  },
+  {
+    "title": "Entity Matching with String Transformation and Similarity-Based Features",
+    "year": 2021,
+    "authors": "Kazunori Sakai, Yuyang Dong , Masafumi Oyamada, Kunihiro Takeoka, Takeshi Okadome",
+    "venue": "Workshop on Software Foundations for Data Interoperability ( SFDI 2021@VLDB 2021 Workshop )",
+    "links": []
+  },
+  {
+    "title": "Learning from Unsure Responses",
+    "year": 2020,
+    "authors": "Kunihiro Takeoka, Yuyang Dong , Masafumi Oyamada",
+    "venue": "AAAI Conference on Artificial Intelligence ( AAAI 2020 )",
+    "links": []
+  },
+  {
+    "title": "NGNC: A Flexible and Efficient Framework for Error-Tolerant Query Autocompletion",
+    "year": 2020,
+    "authors": "Yukai Miao, Jianbin Qin, Sheng Hu, Yuyang Dong , Yoshiharu Ishikawa, Makoto Onizuka",
+    "venue": "Workshop on Software Foundations for Data Interoperability ( SFDI 2020@VLDB 2020 Workshop )",
+    "links": []
+  },
+  {
+    "title": "Continuous Top-k Spatial-Keyword Search on Dynamic Objects",
+    "year": 2020,
+    "authors": "Yuyang Dong , Chuan Xiao, Hanxiong Chen, Jefferey Xu Yu, Kunihiro Takeoka, Masafumi Oyamada, and Hiroyuki Kitagawa",
+    "venue": "The VLDB Journal, Springer. ( VLDBJ )",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "/papers/vldbj2020-dsk.pdf"
+      }
+    ]
+  },
+  {
+    "title": "Continuous Search on Dynamic Spatial Keyword Objects",
+    "year": 2019,
+    "authors": "Yuyang Dong , Hanxiong Chen, Hiroyuki kitagawa",
+    "venue": "Short paper, International Conference on Data Engineering ( ICDE 2019 )",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "/papers/ICDE19_DSK.pdf"
+      }
+    ]
+  },
+  {
+    "title": "Balanced Nearest Neighborhood Query in Spatial Database",
+    "year": 2019,
+    "authors": "Sang Le, Yuyang Dong , Hanxiong Chen, Kazutaka Furuse.",
+    "venue": "Short paper. International Conference on Big Data and Smart Computing ( BigComp 2019 )",
+    "links": []
+  },
+  {
+    "title": "Weighted Aggregate Reverse Rank Queries",
+    "year": 2018,
+    "authors": "Yuyang Dong , Hanxiong Chen, Jeffrey Xu Yu, Kazutaka Furuse, Hiroyuki Kitagawa.",
+    "venue": "ACM Transactions on Spatial Algorithms and Systems ( TSAS )",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "/papers/TSAS.pdf"
+      }
+    ]
+  },
+  {
+    "title": "Bound-and-filter Framework for Aggregate Reverse Rank Queries",
+    "year": 2018,
+    "authors": "Yuyang Dong , Hanxiong Chen, Kazutaka Furuse, Hiroyuki kitagawa",
+    "venue": "Transactions on Large-Scale Data and Knowledge-Centered Systems ( TLDKS )",
+    "links": []
+  },
+  {
+    "title": "Efficient Methods for Aggregate Reverse Rank Queries",
+    "year": 2018,
+    "authors": "Yuyang Dong , Hanxiong Chen, Kazutaka Furuse, Hiroyuki Kitagawa",
+    "venue": "IEICE Transactions on Information and Systems.",
+    "links": []
+  },
+  {
+    "title": "Grid-Index algorithm for reverse rank queries.",
+    "year": 2017,
+    "authors": "Yuyang Dong , Hanxiong Chen, Jeffrey Xu Yu, Kazutaka Furuse, Hiroyuki Kitagawa",
+    "venue": "International Conference on Extending Database Technology ( EDBT 2017 )",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "/papers/EDBT_GIR.pdf"
+      }
+    ]
+  },
+  {
+    "title": "Efficient Processing of Aggregate Reverse Rank Queries.",
+    "year": 2017,
+    "authors": "Yuyang Dong , Hanxiong Chen, Hiroyuki kitagawa.",
+    "venue": "Short paper. International Conference on Database and Expert Systems Applications ( DEXA 2017 )",
+    "links": []
+  },
+  {
+    "title": "Aggregate Reverse Rank Queries",
+    "year": 2016,
+    "authors": "Yuyang Dong , Hanxiong Chen, Kazutaka Furuse, Hiroyuki Kitagawa",
+    "venue": "International Conference on Database and Expert Systems Applications ( DEXA 2016 ) ( Best Paper Award )",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "/papers/DEXA_ARR_2016.pdf"
+      }
+    ]
+  }
+]

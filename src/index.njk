@@ -1,0 +1,65 @@
+---
+layout: base.njk
+isHome: true
+---
+<section class="hero wrap" id="profile">
+ <div class="hero-copy">
+  <div class="eyebrow"><span class="status-dot"></span> AI RESEARCHER · JAPAN</div>
+  <h1>From data.<br>To intelligence.<br><em>To action.</em></h1>
+  <p class="hero-intro">I'm <strong>Yuyang Dong <span>(David Dong)</span></strong>.<br>I build models that understand our world—and turn that understanding into useful action.</p>
+  <p class="hero-role">Chief Research Scientist &amp; LLM Team Tech Lead, SB Intuitions<br>Invited Associate Professor, The University of Osaka</p>
+  <div class="hero-actions"><a class="button primary" href="#research">Explore my research <span aria-hidden="true">↓</span></a><a class="text-link" href="{{ site.cv }}">Read my CV <span aria-hidden="true">↗</span></a></div>
+ </div>
+ <div class="research-visual" aria-label="Interactive research loop: data, models, and agents">
+  <div class="visual-top"><span class="micro">A CONNECTED VIEW OF INTELLIGENCE</span><span class="micro muted">01 — 03</span></div>
+  <div class="network-stage">
+   <svg class="network" viewBox="0 0 520 380" role="img" aria-label="A connected network showing a feedback loop from data through models to agents">
+    <defs><radialGradient id="halo"><stop stop-color="#78eebc" stop-opacity=".15"/><stop offset="1" stop-color="#78eebc" stop-opacity="0"/></radialGradient><linearGradient id="wire"><stop stop-color="#a8f4cc" stop-opacity=".7"/><stop offset="1" stop-color="#89b7df" stop-opacity=".2"/></linearGradient></defs>
+    <circle cx="262" cy="180" r="168" fill="url(#halo)"/>
+    <g class="orbital-grid" fill="none" stroke="#a8f4cc" stroke-opacity=".1"><ellipse cx="262" cy="180" rx="163" ry="144"/><ellipse cx="262" cy="180" rx="114" ry="144"/><ellipse cx="262" cy="180" rx="50" ry="144"/><ellipse cx="262" cy="180" rx="163" ry="92"/><ellipse cx="262" cy="180" rx="163" ry="37"/><path d="M99 180h326M262 36v288"/></g>
+    <g id="network-points"></g>
+    <g class="loop-tracks" fill="none" stroke="url(#wire)" stroke-width="1.2"><path d="M105 241Q96 112 255 96T423 241"/><path d="M423 241Q274 378 105 241"/><path d="M105 241L255 96L423 241Z" opacity=".35"/></g>
+    <g class="moving-signal"><circle r="3" fill="#b3ffce"><animateMotion dur="9s" repeatCount="indefinite" path="M105 241Q96 112 255 96T423 241Q274 378 105 241"/></circle></g>
+    <g class="graph-node node-data" transform="translate(105 241)"><circle class="node-halo" r="26"/><circle class="node-ring" r="16"/><rect x="-6" y="-6" width="12" height="12" rx="2"/><text x="0" y="46" text-anchor="middle">DATA</text></g>
+    <g class="graph-node node-models" transform="translate(255 96)"><circle class="node-halo" r="29"/><circle class="node-ring" r="19"/><path d="M-8 0L0-8L8 0L0 8Z"/><text x="0" y="-37" text-anchor="middle">MODELS</text></g>
+    <g class="graph-node node-agents" transform="translate(423 241)"><circle class="node-halo" r="26"/><circle class="node-ring" r="16"/><path d="M-6-6L7 0L-6 6Z"/><text x="0" y="46" text-anchor="middle">AGENTS</text></g>
+    <text class="graph-caption" x="262" y="360" text-anchor="middle">LEARN · REASON · ACT · IMPROVE</text>
+   </svg>
+  </div>
+  <div class="loop-tabs" role="tablist" aria-label="Explore research layers">
+   <button role="tab" aria-selected="true" aria-controls="loop-panel" id="tab-data" data-layer="data" tabindex="0"><span>01</span> Data</button>
+   <button role="tab" aria-selected="false" aria-controls="loop-panel" id="tab-models" data-layer="models" tabindex="-1"><span>02</span> Models</button>
+   <button role="tab" aria-selected="false" aria-controls="loop-panel" id="tab-agents" data-layer="agents" tabindex="-1"><span>03</span> Agents</button>
+  </div>
+  <div class="loop-panel" id="loop-panel" role="tabpanel" aria-labelledby="tab-data" tabindex="0"><span class="micro accent" id="loop-kicker">THE FOUNDATION</span><p id="loop-description">Find the right data. Preserve its structure. Make it useful for learning.</p><a id="loop-link" href="#data-research">Explore data research <span aria-hidden="true">↗</span></a></div>
+ </div>
+</section>
+<div class="credibility wrap"><span class="micro">RESEARCH &amp; INDUSTRY</span><div><span>SB Intuitions <small>SoftBank Group</small></span><span>NEC <small>2019–2025</small></span><span>The University of Osaka</span><span>University of Tsukuba <small>Ph.D.</small></span></div></div>
+<section class="section wrap" id="research">
+ <div class="section-heading"><div><span class="eyebrow">01 / SELECTED WORK</span><h2>Building intelligence.<br><span class="muted">Across the whole system.</span></h2></div><p>My work connects data systems, foundation models, and agents—with a focus on Japanese language and real-world information.</p></div>
+ <article class="flagship" id="models-research">
+  <div class="flagship-copy"><div class="eyebrow accent">FOUNDATION MODELS · SB INTUITIONS</div><h3>Sarashina</h3><p class="project-role">Model Development Lead</p><p>Japanese foundation models, built from scratch. From large-scale pretraining to reinforcement learning and tool use, I work across the model development pipeline.</p><div class="project-facts"><div><strong>30T</strong><span>pretraining tokens<br>Sarashina3 mini / nano</span></div><div><strong>日本語</strong><span>Japanese language<br>at the core</span></div></div><a class="text-link" href="https://www.sbintuitions.co.jp/blog/entry/2026/06/30/100000">Official technical blog <span aria-hidden="true">↗</span></a></div>
+  <div class="model-art" aria-hidden="true"><div class="model-art-label micro">SARASHINA / 更科</div><div class="token-row"><span>言語</span><span>knowledge</span><span>文脈</span></div><div class="model-core"><span class="core-orbit"></span><span class="core-orbit second"></span><span class="core-orbit third"></span><span class="core-symbol">更</span></div><div class="model-flow"><span>PRETRAIN</span><i>→</i><span>ALIGN</span><i>→</i><span>ACT</span></div><div class="micro model-art-bottom">FROM LANGUAGE TO CAPABILITY</div></div>
+ </article>
+ <div class="research-grid">
+  <article class="research-card" id="data-research"><div class="card-meta"><span class="micro accent">DATA-CENTRIC AI</span><span class="micro muted">01</span></div><div class="table-art" aria-hidden="true"><div><span></span><span></span><span></span><span></span></div><div><span></span><span class="highlight"></span><span></span><span></span></div><div><span></span><span></span><span class="highlight"></span><span></span></div><div><span class="highlight"></span><span></span><span></span><span></span></div><b>↗</b><div class="table-clean"><span></span><span></span><span></span><span></span></div></div><h3>Better data.<br>Better intelligence.</h3><p><strong>Jellyfish</strong> brings instruction-tuned language models to data preprocessing. <strong>DeepJoin</strong> helps discover joinable tables in data lakes.</p><div class="project-links"><a href="https://aclanthology.org/2024.emnlp-main.497/">Jellyfish · EMNLP 2024 ↗</a><a href="https://arxiv.org/abs/2212.07588">DeepJoin · VLDB 2023 ↗</a></div></article>
+  <article class="research-card"><div class="card-meta"><span class="micro accent">MULTIMODAL UNDERSTANDING</span><span class="micro muted">02</span></div><div class="document-art" aria-hidden="true"><div class="doc-page"><i></i><i></i><i></i><div class="doc-chart"><b></b><b></b><b></b><b></b></div><i></i></div><span class="scan-line"></span><div class="doc-caption"><span>structure</span><span>context</span><span>meaning</span></div></div><h3>Beyond the text.<br>Into the structure.</h3><p>Understanding charts, tables, and diagrams as connected information. <strong>SCAN</strong> links document layout with textual and visual retrieval.</p><div class="project-links"><a href="https://aclanthology.org/2026.findings-eacl.82/">SCAN · EACL 2026 ↗</a><a href="https://www.nec.com/en/press/202411/global_20241127_03.html">NEC technology announcement ↗</a></div></article>
+ </div>
+ <div class="research-note" id="agents-research"><span class="eyebrow">THE NEXT QUESTION</span><p>How do we optimize <em>data, models, and agents together</em>—so the whole system improves with use?</p><a class="text-link" href="/blog/">Follow the thinking ↗</a></div>
+</section>
+<section class="section papers-section" id="publications"><div class="wrap">
+ <div class="section-heading"><div><span class="eyebrow">02 / RESEARCH PAPERS</span><h2>Ideas, made concrete.</h2></div><a class="text-link" href="/publications/">All publications <span aria-hidden="true">↗</span></a></div>
+ <div class="paper-list">
+ {% for p in publications %}{% if loop.index <= 4 %}<article class="paper-row"><div class="paper-year">{{ p.year }}</div><div><div class="micro accent">{% if p.title.startsWith('Adaptive') %}FINDINGS OF ACL{% elif p.title.startsWith('SCAN') %}FINDINGS OF EACL{% elif p.title.startsWith('Learning') %}ARXIV PREPRINT{% else %}EMNLP{% endif %}</div><h3><a href="{{ p.links[0].url }}">{{ p.title }} <span aria-hidden="true">↗</span></a></h3><p>{{ p.authors }}</p></div></article>{% endif %}{% endfor %}
+ </div>
+ <p class="small muted">* Equal contribution. Full publication details and earlier work are available in the archive.</p>
+</div></section>
+<section class="section wrap" id="news">
+ <div class="section-heading"><div><span class="eyebrow">03 / BLOG &amp; NOTES</span><h2>A place to think<br><em>in the open.</em></h2></div><div><p>Notes on building models, working with data, and the questions in between. In English and Chinese.</p><a class="text-link" href="/blog/">Visit the blog <span aria-hidden="true">↗</span></a></div></div>
+ {% if collections.publishedPosts.length %}<div class="writing-list">{% for post in collections.publishedPosts %}{% if loop.index <= 3 %}<a class="writing-row" href="{{ post.url }}"><span class="micro">{{ post.date | readableDate }}</span><div><h3>{{ post.data.title }}</h3><p>{{ post.data.description }}</p></div><span aria-hidden="true">↗</span></a>{% endif %}{% endfor %}</div>{% endif %}
+ <div class="writing-list"><a class="writing-row" href="https://www.sbintuitions.co.jp/blog/entry/2026/06/30/100000"><span class="micro">TECHNICAL BLOG<br><span class="muted">JUN 2026 · JAPANESE</span></span><div><h3>Inside Sarashina3 mini &amp; nano</h3><p>From-scratch pretraining, reinforcement learning, and agent capabilities. Published on the SB Intuitions technical blog.</p></div><span aria-hidden="true">↗</span></a><a class="writing-row" href="/papers/tablellm_最強DB_YuyangDong.pdf"><span class="micro">LECTURE NOTES<br><span class="muted">JUL 2025 · JAPANESE</span></span><div><h3>Large language models for tabular data</h3><p>Slides from 最強DB講義 #37: using language models to work with tables.</p></div><span aria-hidden="true">↗</span></a></div>
+</section>
+<section class="section about-section" id="about"><div class="wrap about-grid"><div><span class="eyebrow">04 / BACKGROUND</span><h2>Research depth.<br><em>Real-world models.</em></h2><p class="about-intro">My path began with spatial databases and vector search. Today, I work at the intersection of data, language, and multimodal intelligence.</p><p>Based in Japan, with a Ph.D. in Computer Science from the University of Tsukuba. My work spans industrial model development and academic research.</p><a class="text-link" href="{{ site.linkedin }}">Connect on LinkedIn ↗</a></div><div class="timeline"><article><span class="micro accent">MAY 2026 — PRESENT</span><h3>The University of Osaka</h3><p>Invited Associate Professor</p></article><article><span class="micro accent">SEP 2025 — PRESENT</span><h3>SB Intuitions <small>(SoftBank Group)</small></h3><p>Chief Research Scientist · LLM Team Tech Lead<br>Sarashina model development</p></article><article><span class="micro muted">APR 2019 — SEP 2025</span><h3>NEC Corporation</h3><p>Principal Researcher, previously Special Researcher and Researcher.<br>Core team member, cotomi / cotomi-v2; chart and document understanding.</p><a href="https://www.nec.com/en/global/rd/technologies/202310/index.html">NEC interview ↗</a></article><article><span class="micro muted">2014 — 2019</span><h3>University of Tsukuba</h3><p>Master of Engineering &amp; Ph.D. in Computer Science</p></article><article><span class="micro muted">2013</span><h3>China University of Mining &amp; Technology, Beijing</h3><p>Bachelor's degree in Computer Science</p></article></div></div>
+ <div class="wrap awards-strip" id="awards"><span class="micro">RECOGNITION</span><div><strong>DBSJ Kambayashi Young Researcher Award</strong><span>2022</span></div><div><strong>Tsukuba President's Award</strong><span>2019</span></div><div><strong>DEXA Best Paper Award</strong><span>2016</span></div></div>
+</section>
+<section class="closing wrap"><span class="eyebrow">KEEP EXPLORING</span><h2>Good research starts<br>with a better question.</h2><div><a class="button primary" href="/blog/">Read the blog ↗</a><a class="text-link" href="{{ site.github }}">Explore on GitHub ↗</a></div></section>

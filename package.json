@@ -1,0 +1,17 @@
+{
+  "name": "yuyang-dong-homepage",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "eleventy --serve --port=8098",
+    "check": "node scripts/check-site.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "3.1.6"
+  }
+}
