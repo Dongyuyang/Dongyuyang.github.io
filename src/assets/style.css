@@ -155,14 +155,8 @@ strong {
   white-space:nowrap;
   min-height:44px;
 }
-.brand-mark {
-  font-size:29px;
-  letter-spacing:-3px;
-  color:var(--brand);
-}
-.brand-mark span {
-  color:var(--ink);
-}
+
+
 .brand-alias {
   color:var(--muted);
   font-weight:450;
@@ -1386,9 +1380,7 @@ a.writing-row:hover h3 {
     font-size:14px;
     gap:12px;
   }
-  .brand-mark {
-    font-size:27px;
-  }
+
   .site-header nav {
     padding-inline:20px;
   }
@@ -1776,4 +1768,56 @@ a.writing-row:hover h3 {
   width: 100%;
   height: auto;
   border-radius: 6px;
+}
+
+.foundation-feature .foundation-title {
+  font-size: clamp(34px, 3.6vw, 48px);
+  line-height: 1.15;
+  margin-bottom: 28px;
+}
+.foundation-models {
+  padding: 12px 38px;
+  background: var(--surface2);
+  border-left: 1px solid var(--line);
+}
+.foundation-model {
+  padding: 28px 0;
+}
+.foundation-model + .foundation-model {
+  border-top: 1px solid #e9c6cc;
+}
+.foundation-model .model-company {
+  color: var(--accent);
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+.foundation-model h4 {
+  font-size: clamp(27px, 2.6vw, 36px);
+  font-weight: 650;
+  letter-spacing: -.035em;
+  line-height: 1.2;
+  margin: 0 0 14px;
+}
+.foundation-model p {
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+.foundation-model .text-link {
+  color: var(--accent);
+  border-color: #e9c6cc;
+}
+@media (max-width: 700px) {
+  .foundation-models {
+    padding: 0 26px;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+}
+@media (max-width: 380px) {
+  .foundation-feature .foundation-title {
+    font-size: 28px;
+  }
+  .foundation-model h4 {
+    font-size: 26px;
+  }
 }
