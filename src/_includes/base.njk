@@ -13,7 +13,7 @@
   <meta property="og:url" content="{{ page.url | absoluteUrl }}">
   <meta property="og:image" content="{{ '/assets/social-card.png' | absoluteUrl }}">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/personal-avatar.png" type="image/png">
   <link rel="alternate" type="application/rss+xml" title="Yuyang Dong — Blog" href="/feed.xml">
   <link rel="preload" href="/assets/fonts/manrope.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/assets/style.css">
@@ -23,11 +23,11 @@
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
  <div class="header-inner wrap">
-  <a class="brand" href="/" aria-label="Yuyang Dong — Home"><span>Yuyang Dong<span class="brand-alias"> / David Dong</span></span></a>
+  <a class="brand" href="/" aria-label="Yuyang Dong — Home"><img class="brand-avatar" src="/assets/personal-avatar.png" alt="" width="40" height="40"><span>Yuyang Dong<span class="brand-alias"> / David Dong</span></span></a>
   <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu <span aria-hidden="true">+</span></button>
   <nav id="main-nav" aria-label="Main navigation">
    <a href="/#research"{% if nav == 'research' %} aria-current="page"{% endif %}>Research</a>
-   <a href="/#agents-research">Vision</a>
+   <a href="/#vision">Vision</a>
    <a href="/publications/"{% if nav == 'publications' %} aria-current="page"{% endif %}>Publications</a>
    <a href="/blog/"{% if nav == 'blog' %} aria-current="page"{% endif %}>Blog</a>
    <a href="/#about">About</a>

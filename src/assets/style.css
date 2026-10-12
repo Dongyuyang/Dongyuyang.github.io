@@ -1821,3 +1821,98 @@ a.writing-row:hover h3 {
     font-size: 26px;
   }
 }
+
+/* Personal identity appears before the research narrative. */
+.brand-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}
+.profile-top {
+  display: grid;
+  grid-template-columns: 264px minmax(0, 1fr);
+  align-items: center;
+  gap: 42px;
+  padding-block: 44px;
+  border-bottom: 1px solid var(--line);
+}
+.profile-top .profile-photo {
+  margin: 0;
+  padding: 6px;
+}
+.profile-summary .eyebrow {
+  margin-bottom: 8px;
+}
+.profile-name {
+  font-size: 34px;
+  font-weight: 650;
+  line-height: 1.3;
+  letter-spacing: -.03em;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+.profile-name span {
+  font-size: 24px;
+  font-weight: 450;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.profile-roles {
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+.profile-social {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.profile-social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+  font-size: 14px;
+}
+.profile-social a:hover {
+  border-color: var(--accent);
+  background: var(--surface2);
+}
+.profile-social svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+@media (max-width: 700px) {
+  .profile-top {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    padding-block: 28px 32px;
+  }
+  .profile-top .profile-photo {
+    width: 100%;
+    max-width: 440px;
+  }
+  .profile-name {
+    font-size: 30px;
+  }
+  .profile-name span {
+    font-size: 21px;
+  }
+  .profile-social {
+    gap: 8px;
+  }
+  .profile-social a {
+    padding-inline: 11px;
+  }
+  .brand-avatar {
+    width: 34px;
+    height: 34px;
+  }
+}

@@ -10,7 +10,7 @@
   const layers={
     data:{kicker:'The foundation',description:'Find the right data. Preserve its structure. Make it useful for learning.',link:'Explore data research',href:'#data-research'},
     models:{kicker:'The learning system',description:'Build language and multimodal models that turn high-quality data into useful capabilities.',link:'Explore foundation models',href:'#models-research'},
-    agents:{kicker:'The feedback loop',description:'Connect models with tools, actions, and feedback. Optimize the system as a whole.',link:'Explore the next question',href:'#agents-research'}
+    agents:{kicker:'The feedback loop',description:'Connect models with tools, actions, and feedback. Optimize the system as a whole.',link:'Explore the research notebook',href:'/blog/'}
   };
   const tabs=[...document.querySelectorAll('[data-layer]')];
   const visual=document.querySelector('.research-visual');
