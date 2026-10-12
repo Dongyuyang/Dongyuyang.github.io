@@ -16,7 +16,7 @@
  <meta property="og:title" content="{% if pageKey != 'home' and pageTitle %}{{ pageTitle }} — {% endif %}Yuyang Dong">
  <meta property="og:description" content="{{ description or t.description }}">
  <meta property="og:url" content="{{ page.url | absoluteUrl }}">
- <meta property="og:image" content="{{ '/assets/social-card.png' | absoluteUrl }}">
+ <meta property="og:image" content="{{ (socialImage or '/assets/social-card.png') | absoluteUrl }}">
  <meta name="twitter:card" content="summary_large_image">
  <link rel="icon" href="/assets/personal-avatar.png" type="image/png">
  <link rel="alternate" type="application/rss+xml" title="Yuyang Dong — {{ t.blog }}" href="{{ t.prefix }}feed.xml">
