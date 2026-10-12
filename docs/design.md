@@ -17,7 +17,7 @@ Type: Manrope for headlines and body; system monospace only for years, numbered 
 A personal research cover: left-aligned three-line vision, right-hand red feedback diagram; below it, projects with distinct hierarchies, an explicit vision statement, publications, writing, and career history.
 
 ```
-Name                  Research  Vision  Papers  Blog  About  CV
+Name                  Research  Vision  Papers  Blog  About
 Vision headline       Data / Models / Agents feedback diagram
 Who I am              Three accessible layer selectors
 Affiliations

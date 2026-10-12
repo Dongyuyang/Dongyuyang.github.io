@@ -1,5 +1,5 @@
 export default function(eleventyConfig) {
-  for (const path of ['papers', 'cv', 'cv.pdf', 'photo.jpg', 'test_pdfs']) eleventyConfig.addPassthroughCopy(path);
+  for (const path of ['papers', 'photo.jpg', 'test_pdfs']) eleventyConfig.addPassthroughCopy(path);
   eleventyConfig.addPassthroughCopy({'src/assets': 'assets'});
   eleventyConfig.addFilter('readableDate', value => new Date(value).toLocaleDateString('en-US', {year:'numeric', month:'long', day:'numeric', timeZone:'UTC'}));
   eleventyConfig.addFilter('isoDate', value => new Date(value).toISOString());

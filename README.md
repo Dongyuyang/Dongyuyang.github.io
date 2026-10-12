@@ -2,7 +2,7 @@
 
 Personal research homepage: https://dongyuyang.github.io
 
-English homepage, bilingual Markdown blog, publication archive, and downloadable CV.
+English homepage, bilingual Markdown blog, and publication archive.
 Built with Eleventy; published automatically through GitHub Actions to GitHub Pages.
 
 ## 写博客（最常用）
@@ -39,14 +39,14 @@ draft: false
 
 - `src/index.njk`：首页文案、研究项目、履历。
 - `src/_data/publications.json`：完整论文列表；首页自动取最新四项。
-- `src/_data/site.json`：个人信息、社交链接、CV 地址。
+- `src/_data/site.json`：个人信息、社交链接。
 - `src/assets/style.css`：视觉样式和手机布局。
 - `src/assets/site.js`：研究层切换、论文搜索、语言筛选、阅读进度、手机菜单。
 - `src/_includes/post.njk`：文章阅读页模板。
-- `cv/`、`papers/`：现有 PDF，原链接保持不变。
+- `papers/`：论文 PDF，原链接保持不变。
 
 当前主页口径：SB Intuitions 为在职，NEC cotomi 为核心成员。不展示 Initial S。
-历史 CV PDF 单独保留；改主页不会自动改 PDF。
+CV 不在网站展示或发布；本地 CV 文件通过 .gitignore 保留，不提交到仓库。
 没有原创文章时，博客明确显示待更新状态，并展示已有官方文章、采访和讲义。
 
 ## 本地预览
@@ -67,4 +67,4 @@ npm run check
 
 `_site/` 是生成目录，不提交。GitHub Pages 的发布来源应设为 **GitHub Actions**。
 主分支 `master` 有新提交后会自动构建、检查站内链接并部署；可在 Actions 手动重新运行。
-所有旧论文 PDF、照片和旧 CV 文件保持原网址可访问。
+所有旧论文 PDF 和照片保持原网址可访问。CV 下载地址不再发布。

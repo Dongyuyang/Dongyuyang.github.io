@@ -1,3 +1,7 @@
 node_modules/
 _site/
 .DS_Store
+
+# Local CV copies are not published or committed.
+/cv/
+/cv.pdf

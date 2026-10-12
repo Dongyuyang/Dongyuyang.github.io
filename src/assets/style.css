@@ -182,17 +182,9 @@ strong {
 .site-header nav a[aria-current] {
   color:var(--accent);
 }
-.nav-cv {
-  border:1px solid var(--line);
-  padding:7px 16px;
-  border-radius:6px;
-}
-.nav-cv:hover {
-  border-color:var(--accent);
-}
-.nav-cv span {
-  margin-left:14px;
-}
+
+
+
 .menu-toggle {
   display:none;
 }
@@ -1312,9 +1304,7 @@ a.writing-row:hover h3 {
   .site-header nav a {
     padding:8px 12px;
   }
-  .site-header .nav-cv {
-    max-width:140px;
-  }
+
   .hero {
     gap:28px;
     padding-block:56px;
@@ -1771,4 +1761,19 @@ a.writing-row:hover h3 {
   .moving-signal {
     display:none;
   }
+}
+
+.profile-photo {
+  max-width: 440px;
+  margin: 28px 0;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface2);
+}
+.profile-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
 }
