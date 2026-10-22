@@ -21,6 +21,33 @@
   function restoreFilters(){if(search){search.value=new URLSearchParams(location.search).get('q')||'';filterPapers();}}
   window.addEventListener('popstate',restoreFilters);
   document.querySelectorAll('[data-locale-link]').forEach(link=>link.addEventListener('click',()=>{const url=new URL(link.href);if(location.hash)url.hash=location.hash;const query=new URLSearchParams(location.search).get('q');if(query&&search)url.searchParams.set('q',query);link.href=url.href;}));
+  // Only published article pages contact the counter; local previews never count.
+  const viewCount = document.querySelector('[data-view-count]');
+  if (viewCount && location.hostname === 'dongyuyang.github.io') {
+    const value = document.querySelector('#busuanzi_value_page_pv');
+    const counter = document.createElement('script');
+    let finished = false;
+    const unavailable = () => {
+      if (finished) return;
+      value.textContent = viewCount.dataset.unavailable;
+      viewCount.dataset.state = 'unavailable';
+    };
+    const observer = new MutationObserver(() => {
+      const raw = value.textContent.trim();
+      if (!/^\d+$/.test(raw) || !Number.isSafeInteger(Number(raw))) return;
+      finished = true;
+      clearTimeout(timeout);
+      observer.disconnect();
+      value.textContent = Number(raw).toLocaleString(document.documentElement.lang);
+      viewCount.dataset.state = 'ready';
+    });
+    observer.observe(value, { childList: true, subtree: true, characterData: true });
+    const timeout = setTimeout(unavailable, 10000);
+    counter.src = 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
+    counter.async = true;
+    counter.onerror = unavailable;
+    document.head.append(counter);
+  }
   const progress=document.querySelector('#reading-progress');
   const article=document.querySelector('#article-content');
   if(progress&&article){let pending=false;function update(){const start=article.getBoundingClientRect().top+window.scrollY-window.innerHeight*.25;const length=Math.max(1,article.offsetHeight-window.innerHeight*.5);progress.style.transform='scaleX('+Math.max(0,Math.min(1,(window.scrollY-start)/length))+')';pending=false;}window.addEventListener('scroll',()=>{if(!pending){pending=true;requestAnimationFrame(update);}},{passive:true});window.addEventListener('resize',update);update();}
