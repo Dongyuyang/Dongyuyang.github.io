@@ -110,8 +110,7 @@
     "zennFusionTitle": "Multimodal model merging: selective parameter fusion between VLMs and LLMs",
     "zennFusionDescription": "Experiments merging Qwen2.5-VL and Qwen2.5, comparing self-attention-only merging and layer-dependent weights. Japanese article on Zenn.",
     "viewCountLabel": "Views",
-    "viewCountUnavailable": "Unavailable",
-    "viewCountNote": "Page views since October 22, 2026; each language is counted separately. Repeat visits count. Statistics by Busuanzi (third-party service)."
+    "viewCountUnavailable": "Unavailable"
   },
   {
     "code": "ja",
@@ -224,8 +223,7 @@
     "zennFusionTitle": "マルチモーダルモデル融合の試し：Vision-Language ModelとLanguage Modelの間の選択的パラメータ統合",
     "zennFusionDescription": "Qwen2.5-VL と Qwen2.5 の融合実験。self-attention のみのマージと、層ごとに重みを変える手法を比較した Zenn 記事。",
     "viewCountLabel": "閲覧数",
-    "viewCountUnavailable": "取得できません",
-    "viewCountNote": "2026年10月22日以降のページ閲覧数。言語ごとに集計し、再訪問も含みます。外部サービス Busuanzi による統計です。"
+    "viewCountUnavailable": "取得できません"
   },
   {
     "code": "zh",
@@ -338,7 +336,6 @@
     "zennFusionTitle": "多模态模型融合尝试：VLM 与 LLM 之间的选择性参数融合",
     "zennFusionDescription": "Qwen2.5-VL 与 Qwen2.5 的模型融合实验，比较仅合并 self-attention 参数及分层权重策略。发表于 Zenn，原文为日语。",
     "viewCountLabel": "阅读量",
-    "viewCountUnavailable": "暂不可用",
-    "viewCountNote": "自 2026 年 10 月 22 日起统计，各语言分别计数，包含重复访问。统计由第三方服务不蒜子提供。"
+    "viewCountUnavailable": "暂不可用"
   }
 ]
