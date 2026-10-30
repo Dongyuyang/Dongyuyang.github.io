@@ -1,6 +1,6 @@
 ---
 title: "How many secrets does AI need to become your personal assistant?"
-description: "Building a personal agent has left me with a strange problem: AI is smart enough, but it doesn't know me. Letting it get to know me is the part that makes me hesitate."
+description: "Working on personal agents has made me wonder whether useful AI depends on more than model capability. There is another, harder question: how much personal information are we willing to share with it?"
 date: 2026-10-31
 lang: en
 translationKey: personal-agent-secrets
@@ -8,112 +8,172 @@ socialImage: /assets/blog/personal-agent-secrets/cover.jpg
 draft: false
 ---
 
-## Smart enough. Has no idea who I am.
+## AI is already smart, but it still doesn't know me well enough
 
 <img src="/assets/blog/personal-agent-secrets/01-context.webp" alt="A person with a coffee faces a blank laptop while mail, calendars and photos sit in separate trays" width="1672" height="941" fetchpriority="high" decoding="async">
 
-I've been tinkering with personal agents lately.
+I've been working on personal agents lately.
 
-Working on databases, LLMs, training and inference, I used to think mostly about making things smarter, faster and, ideally, cheaper.
+Before this, I worked on databases and LLMs, including model training and inference. Most of my attention went into making models smarter, improving performance, and lowering costs.
 
-What I want from AI now is fairly modest. Tell me what meetings I have this morning, which emails need replies, and what I promised someone yesterday. Preferably before they have to chase me.
+Now that I'm starting to work on agents, the problem feels a little different.
 
-Taken individually, models can already do much of this. Summarizing an email or organizing meeting notes often doesn't even require a particularly large or expensive model.
+For example, I'd like AI to tell me each morning what meetings I have, which emails need replies, who I spoke with yesterday and what we discussed, and which promises I still haven't followed through on.
 
-The trouble is, it has no idea what I did yesterday.
+That doesn't sound particularly complicated.
 
-My email is in Gmail, my schedule in Google Calendar, discussions in Slack. Then there's WeChat, LINE, and files on my computer that even I might struggle to find.
+Today's models generally have little trouble understanding an email or summarizing a meeting. Even a smaller, cheaper model can often do a good job.
 
-So the daily workflow could become: first I organize my life, then I ask AI to organize my life.
+The problem is that it has no idea what I did yesterday.
 
-I'm starting to question what I've hired this assistant for.
+My email is in Gmail, my schedule in Google Calendar, and work discussions in Slack. Then there's WeChat, LINE, and all the files scattered across my computer.
 
-## Then I let it know me, and get nervous
+However smart AI is, without that information it can only wait for me to tell it what to do.
+
+Sometimes I feel that we've spent so many years making AI smarter, only to discover, when we actually try to use it, that what it lacks most may not be intelligence, but an understanding of us.
+
+## Does convenience mean handing over our information?
 
 <img src="/assets/blog/personal-agent-secrets/02-secrets.webp" alt="A hesitant person offers an envelope to a laptop as red threads connect scattered personal records into a human outline" width="1672" height="941" loading="lazy" decoding="async">
 
-Of course, I've thought about simply connecting everything.
+This brings me to an interesting contradiction.
 
-Email, calendar, chat history. Let it find what it needs. Ideally, it would remind me of things before I even ask.
+Of course I want AI to do more for me.
 
-Lovely in theory. Then I reach the authorization screen, and my hand pauses.
+Ideally, I wouldn't need to open my inbox and read every email one by one. It would know what matters and what doesn't. If someone asks about last week's discussion, it could find the record. It might even remind me of something I've forgotten, without being asked.
 
-I used to choose what to tell AI. An agent that works proactively can't wait for me to supply every piece of context. But that context includes quite a few things I hadn't intended to bring up.
+But to do those things, AI needs access to my emails, chat history, calendar, and perhaps even photos and private files.
 
-We already put plenty of information online, just in separate places. Photos here, email there, shopping history somewhere else. Now we want one agent to connect it all.
+When using ChatGPT before, I could choose what to tell it.
 
-A calendar entry alone might say I'm busy on Wednesday afternoon. Add emails, photos and conversations, and the picture could become rather more revealing.
+If I want a personal agent to work proactively, I can't keep providing every piece of information manually.
 
-It might understand not only what I've been doing lately, but what I've been avoiding.
+In other words, we want AI to know us as well as possible, yet we don't want others to know too much about us.
 
-I want an assistant that understands me. If it understands me too well, I might prefer it to play dumb occasionally.
+That's quite a contradiction.
 
-People are difficult. Particularly when the person is me, using a product.
+We've made similar choices with internet services before. For convenience, we entrusted photos to cloud albums, emails to email providers, and plans to calendars.
 
-## A quick look doesn't mean handing over the keys
+But that information used to be scattered.
+
+One service might know what I've photographed, another which meetings I've attended, and another what I've bought.
+
+With personal agents, we actually want one AI to connect all of it.
+
+Each piece of information, on its own, may seem unremarkable.
+
+Put someone's emails, schedule, photos and conversations together, though, and it may become possible to infer things even they haven't noticed about themselves.
+
+That does give me pause.
+
+## Does AI really need to know everything?
 
 <img src="/assets/blog/personal-agent-secrets/03-permission.webp" alt="Only the calendar drawer of a personal cabinet is open, while its owner keeps hold of the key" width="1672" height="941" loading="lazy" decoding="async">
 
-When building models, I always felt we could use more data. With a personal agent, I find myself asking whether it needs quite so much this time.
+When building models, we always want more and better data.
 
-Scheduling tomorrow's meeting may require knowing when I'm unavailable, without reading what every existing meeting is about. Finding one holiday photo needn't mean uploading my entire photo library and keeping another copy indefinitely.
+But working on personal agents has made me wonder whether more is necessarily better.
 
-And drafting a reply is different from pressing Send.
+To schedule tomorrow's meeting, for example, AI might only need to know which times in my calendar are already taken.
 
-A bad draft can be edited. Once it's sent, I have to explain that it wasn't quite what I meant. There goes the time I supposedly saved.
+It doesn't necessarily need to know what every meeting is about.
 
-So I now care about questions I once found fairly dull. Who can read this? What stays afterward? Will it ask again next time? Can I turn it off?
+Finding a photo from last year's holiday doesn't mean it needs to retain the contents of all my photos indefinitely.
 
-I used to stare at model scores. Now I stare at permission settings. Research interests evolve in surprisingly unglamorous ways.
+Reminding me to reply to an email shouldn't mean it can send that reply without confirmation.
 
-I'd like it to use my information. I'd rather not open every door by default just because that's easier.
+There may be an important distinction here:
 
-## Upgrade the model, spare me another introduction
+Letting AI use my information doesn't mean I want to hand over control of it as well.
+
+I didn't think much about this before. When researching models, I was mostly concerned with whether the data could be used and whether the model could learn from it.
+
+Now that I'm trying to turn an agent into a product people can actually use, I have to think about these things.
+
+Who can access this information? When? What remains after it's processed? If I switch to another AI, what happens to the old memories?
+
+None of these questions sounds quite as exciting as model performance or benchmark rankings.
+
+But increasingly, I think they may be what determines whether personal agents really become part of everyday life.
+
+## What if AI's memories didn't belong to AI?
 
 <img src="/assets/blog/personal-agent-secrets/04-memory.webp" alt="A person carries a box of photographs and notebooks from an old laptop to a new one, watched by a curious cat" width="1672" height="941" loading="lazy" decoding="async">
 
-Memory is another thing I've been thinking about.
+There's another idea I've been thinking about lately.
 
-Imagine talking to one AI for three years. It finally understands your work, your habits, and all that background that's exhausting to explain.
+Many AI products now emphasize memory: remembering a user's preferences, habits and past conversations.
 
-Then a better, cheaper model comes out.
+That really is convenient.
 
-Naturally, I want to switch. But if the memories stay inside the old service, the new relationship starts with “Hi, my name is...” all over again.
+But if those memories all live inside one AI service, what happens when I change services?
 
-The model gets an upgrade. I get another introductory session.
+Suppose I've spent three years with an AI. It knows my work, my family, my habits, and the decisions I've made.
 
-It's a bit like buying a new phone and discovering that your contacts can only stay on the old one. I'd like to manage that accumulated information myself, without having to pack up my entire life every time I change models or agents.
+Three years later, a smarter, cheaper model comes along.
 
-That's partly why local storage and personal clouds have become interesting to me again.
+Of course I'd like to switch.
 
-Of course, local storage doesn't magically turn into an invulnerable vault. Devices break, software has vulnerabilities, and calling an external model may still involve sending information out. Plenty of useful features also depend on cloud services.
+But the new AI knows nothing about me. We have to start again.
 
-I don't intend to lock everything away. I'd just like to understand what is being sent, where it stays, and what I can actually stop, export or delete later.
+It's a bit like changing phones and discovering that your contacts can only stay on the old phone.
 
-Preferably before I try to change assistants and discover I'm not allowed to take my luggage.
+So I'm beginning to think that the core of a personal agent perhaps shouldn't be any particular model, but the information and memories a person has accumulated over time.
 
-## Worried about privacy. Still reaching for Allow.
+Models can change, agents can change, and even the applications we use can change.
+
+But my memories should still be mine.
+
+Seen this way, local storage, personal clouds, and data permissions we can manage ourselves may become important again.
+
+Of course, keeping things locally doesn't guarantee security. Devices break, software can have vulnerabilities, and an agent may need to transmit some information when it calls an external model.
+
+Many useful features also genuinely depend on cloud services.
+
+So I don't think everything necessarily has to be locked inside our own devices.
+
+What may really matter is whether we can understand where our data goes, decide what can be shared, and retain the ability to take it back later.
+
+## How much are we willing to hand over to AI?
 
 <img src="/assets/blog/personal-agent-secrets/05-inbox.webp" alt="Late at night, a person slides mail toward a laptop while keeping a hand beside a stop button; the cat is already asleep" width="1672" height="941" loading="lazy" decoding="async">
 
-Eventually, agents may take over more than information. They may take over decisions.
+Looking a little further ahead, the question seems to extend beyond personal information.
 
-If mine handles dozens of little tasks every day, will I really inspect every one? After a hundred went fine, I suspect I'd stop paying much attention to number 101.
+Many agents are moving beyond answering questions to carrying out tasks on our behalf.
 
-Would I still be supervising, or just clicking Confirm out of habit?
+Replying to emails, managing schedules, organizing files, even buying things.
 
-It probably wouldn't happen with one dramatic decision. Today it sorts my email. Tomorrow it schedules meetings. Months later, I notice it's arranging half my day.
+Previously, AI gave us suggestions. We still decided what to do.
 
-As someone who works on models, I want AI to keep improving. As someone trying to build products, I want it to save people some effort.
+But what happens next?
 
-But as a user, I suddenly have a long list of demands. Understand me, but don't jump to conclusions. Take initiative, but don't make decisions behind my back. Handle everything, but let me take over whenever I want.
+If an agent handles dozens of little tasks for me every day, will I really check each one?
 
-Written down like that, I sound like a fairly annoying customer.
+If it got the last hundred right, I might not bother looking at the hundred and first.
 
-I don't have a neat answer. I just hope that, even after handing over a lot of work, I can still see what it's doing and tell it to stop.
+That trust builds gradually.
 
-Will I keep connecting more of my information? Probably.
+At some point, I may already have handed over a substantial share of decisions about my work and life without particularly noticing.
 
-Privacy deserves serious thought. It's just that every time I open my inbox and see all the emails I haven't answered, my firmly considered position gets a little less firm.
+This makes me think that personal agents may ultimately have to address a question more complicated than model capability:
+
+How much are we willing to hand over to AI?
+
+I don't have a particularly clear answer yet.
+
+As someone who researches models, I naturally want AI to become more capable. As someone trying to build products, I also want it to become a useful part of people's daily lives.
+
+But as an ordinary user, I still hope that, even if AI eventually handles most things for me, I can always find out what it's doing and ask it to stop.
+
+Perhaps a good personal agent won't be the AI that knows all my secrets and makes every decision for me.
+
+Perhaps it will be one that understands me well enough while always leaving me in control.
+
+As for me, I'll probably keep worrying about privacy while also finding it hard to resist handing more things over to AI.
+
+There are, after all, just too many emails and messages to deal with every day.
+
+## Could technology let us benefit from AI while keeping control of our own data?
 
 <p class="illustration-note">Illustrations generated with AI.</p>
